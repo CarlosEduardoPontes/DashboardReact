@@ -27,12 +27,12 @@ export const SideBarData = [
             },
             {
                 title: 'Turmas',
-                path: '/overview/revenue',
+                path: '/turmas',
                 icon: <IoIcons.IoIosPaper />, 
             },
             {
-                title: 'Materias',
-                path: '/overview/revenue',
+                title: 'Matérias',
+                path: '/materias',
                 icon: <IoIcons.IoIosPaper />, 
             }
         ]
@@ -46,7 +46,7 @@ export const SideBarData = [
         subNav: [
             {
                 title: 'Alunos',
-                path: '/overview/users',
+                path: '/instituicao/alunos',
                 icon: <IoIcons.IoIosPaper />,
             },
             {
