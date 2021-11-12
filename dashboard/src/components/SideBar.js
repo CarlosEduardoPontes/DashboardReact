@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
+import './SideBar.css'
 import { SideBarData } from './SideBarData'
 import { SubMenu } from './SubMenu'
 
@@ -40,6 +41,7 @@ const SideBarWrap = styled.nav`
 
 `
 
+
 export const SideBar = () => {
     const [sidebar, setSidebar] = useState(false);
 
@@ -50,6 +52,9 @@ export const SideBar = () => {
             <Nav>
                 <NavIcon to='#'>
                     <FaIcons.FaBars onClick={showSidebar}/>
+                </NavIcon>
+                <NavIcon>
+                    <FaIcons.FaPowerOff className='logout'/>
                 </NavIcon>
             </Nav>
             <SideBarNav sidebar={sidebar}>

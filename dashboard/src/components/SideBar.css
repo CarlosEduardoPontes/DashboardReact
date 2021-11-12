@@ -1,0 +1,8 @@
+.logout{
+    color: red;
+    display: inline-block;
+    justify-content: right !important;
+    align-items: right !important;
+    text-align: right;
+    vertical-align: middle;
+}
