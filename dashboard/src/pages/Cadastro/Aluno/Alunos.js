@@ -144,5 +144,3 @@ export const Alunos = props =>{
         
     )
 }
-
-

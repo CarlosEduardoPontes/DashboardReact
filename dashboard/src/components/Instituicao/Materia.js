@@ -1,9 +1,7 @@
 import React from 'react';
 
-const InstituicaoMateria = props =>{
+export const InstituicaoMateria = props =>{
     return(
-        <h1>Materias</h1>
+        <h1>Lista de Matérias</h1>
     )
 }
-
-export default InstituicaoMateria;

@@ -51,24 +51,24 @@ export const SideBarData = [
             },
             {
                 title: 'Professores',
-                path: '/overview/revenue',
+                path: '/instituicao/professores',
                 icon: <IoIcons.IoIosPaper />, 
             },
             {
                 title: 'Turmas',
-                path: '/overview/revenue',
+                path: '/instituicao/turmas',
                 icon: <IoIcons.IoIosPaper />, 
             },
             {
                 title: 'Materias',
-                path: '/overview/revenue',
+                path: '/instituicao/materias',
                 icon: <IoIcons.IoIosPaper />, 
             },
         ]
     },
     {
         title: 'Mensagens',
-        path: '/overview',
+        path: '/',
         icon: <AiIcons.AiFillMessage />,
     }
 ]

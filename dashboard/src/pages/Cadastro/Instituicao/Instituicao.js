@@ -7,3 +7,4 @@ export const Instituicao = () => {
         </div>
     )
 }
+export default Instituicao

@@ -3,7 +3,7 @@ import Table from '../Table/Table';
 
 import api from '../../utils/api';
 
-const InstituicaoProfessor = props =>{
+export const InstituicaoProfessor = props =>{
     let [itens, setItens] = useState([]);
 
     useEffect( () => {
@@ -53,11 +53,9 @@ const InstituicaoProfessor = props =>{
 
     return(
         <main>
-            <h1>Professores</h1>
+            <h1>Lista de Professores</h1>
             <Table columns={columns} itens={itens}></Table>
         </main>
         
     )
 }
-
-export default InstituicaoProfessor;

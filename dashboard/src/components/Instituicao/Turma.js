@@ -1,9 +1,7 @@
 import React from 'react';
 
-const InstituicaoTurma = props =>{
+export const InstituicaoTurma = props =>{
     return(
-        <h1>Turmas</h1>
+        <h1>Lista de Turmas</h1>
     )
 }
-
-export default InstituicaoTurma;

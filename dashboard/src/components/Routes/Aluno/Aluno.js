@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { Route, Redirect } from "react-router-dom";
 
-import StoreContext from "../../Store/Context";
+import StoreContext from '../../store/Context';
 
 const RoutesAluno = ({ component: Component, ...rest}) =>{
     const { session } = useContext(StoreContext);
