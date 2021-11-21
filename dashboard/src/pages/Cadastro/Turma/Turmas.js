@@ -1,12 +1,27 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 import { useState } from 'react/cjs/react.development'
 import MateriaTurma from '../../../components/Instituicao/MateriaTurma/MateriaTurma';
+import StoreContext from '../../../components/store/Context';
 import Table from '../../../components/Table/Table'
 import api from '../../../utils/api'
+import handleChange from '../../../utils/handleChange';
 import '../Cadastro.css'
 import './Turma.css'
 
+const initialState = () =>{
+    return {
+        'nome': '',
+        'periodo': 'MANHA',
+        'grau': '',
+        'dataInicio': '',
+        'duracaoMes': ''
+    }
+}
+
 const Turmas = props =>{
+    const { session } = useContext(StoreContext);
+
+    const [form, setForm] = useState(initialState);
     const [, forceUpdate] = useReducer(x => x + 1, 0);
 
     const [alunoDL, setAlunoDL] = useState([]);
@@ -18,6 +33,16 @@ const Turmas = props =>{
     const [materias, setMaterias] = useState([]);
     const [materiasTurma, setMateriasTurma] = useState([]);
     const [materiaDL, setMateriaDL] = useState('');
+
+    const handleChange = (event) => {
+        
+        const { value, name } = event.target;
+    
+        setForm({
+          ...form,
+          [name]: value
+        });
+    }
 
     useEffect( () => {
         async function getAlunos(){
@@ -128,36 +153,79 @@ const Turmas = props =>{
         )
     }
 
+    const onSubmit = (ev) => {
+        ev.preventDefault();
+
+        form.idInstituicao = session.id;
+        form.alunos = alunosTurma;
+        form.materias = materiasTurma;
+
+        console.log(form);
+
+        api('/turma', 'POST', form)
+            .then( () => alert('Cadastro efetuado com sucesso!'))
+            .catch( err => {console.log(err); alert('Falha ao cadastrar!')});
+    }
 
     return(
         <main class='container'>
-            <form class='card'>
+            <form onSubmit={onSubmit} class='card'>
                
                 <div className='div-form-main'>
                     <h3 className='h3-titulo'>Cadastro de Turmas</h3>
                     <div class='label-float'>
-                        <input type='text' placeholder='Nome *'></input>
-                        <label for='id_instituicao'></label>
+                        <input 
+                            type='text' 
+                            placeholder='Nome *'
+                            onChange={handleChange}
+                            defaultValue={form.nome}
+                            name='nome'
+                        ></input>
                     </div>
                                 
                     <div class='label-float'>
-                        <input type='text' placeholder='Período *'></input>
-                        <label for='nome'></label>
+                        <select
+                            type='text' 
+                            placeholder='Período *'
+                            onChange={handleChange}
+                            defaultValue={form.periodo}
+                            name='periodo'
+                        >
+                            <option value='MANHA'>Manhã</option>
+                            <option value='TARDE'>Tarde</option>
+                            <option value='NOITE'>Noite</option>
+                            <option value='INTEGRAL'>Integral</option>
+                        </select>
                     </div>
                 
                     <div class='label-float'>
-                        <input type='number' placeholder='Grau *'></input>
-                        <label for='identidade'></label>
+                        <input 
+                            type='number' 
+                            placeholder='Grau *'
+                            onChange={handleChange}
+                            defaultValue={form.grau}
+                            name='grau'
+                        ></input>
                     </div>
                 
                     <div class='label-float'>
-                        <input type='date' placeholder="Data de Início"></input>
-                        <label for='data_nasc'></label>
+                        <input 
+                            type='date' 
+                            placeholder="Data de Início"
+                            onChange={handleChange}
+                            defaultValue={form.dataInicio}
+                            name='dataInicio'
+                        ></input>
                     </div>
 
                     <div class='label-float'>
-                        <input type='number' placeholder="Duração (em meses)"></input>
-                        <label for='duracao'></label>
+                        <input 
+                            type='number' 
+                            placeholder="Duração (em meses)"
+                            onChange={handleChange}
+                            defaultValue={form.duracaoMes}
+                            name='duracaoMes'
+                        ></input>
                     </div>
 
                 </div>
@@ -180,7 +248,9 @@ const Turmas = props =>{
 
                         <button onClick={addAluno} className='btn-add'>Adicionar</button>
                     </div>
-                    <Table className='tbl-alunos' columns={alunosColumns} itens={alunosTurma}/>
+                    <div className='div-tbl-alunos'>
+                        <Table className='tbl-alunos' columns={alunosColumns} itens={alunosTurma}/>
+                    </div>
                 </div>
 
                 <div className='div-materias'>
