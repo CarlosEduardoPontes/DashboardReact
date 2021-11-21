@@ -1,0 +1,55 @@
+.div-materia{
+    display: inline-flex;
+
+    width: 200px;
+    min-height: 120px;
+
+    border: 1px solid #666;
+    border-radius: 2px;
+
+    box-shadow: 1px 1px 2px #333;
+}
+
+.materia-nome{
+    font-size: 11pt;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.div-add-professor{
+    margin: 2px;
+}
+
+.div-add-professor label{
+    font-size: 9pt;
+}
+
+.div-add-professor button{
+    background-color: unset;
+    border: unset;
+
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 5px 10px;
+
+    cursor: pointer;
+}
+
+.div-add-professor button:hover{
+    color:#3d8;
+}
+
+.div-professor-materia{
+    display: inline-block;
+
+    font-size: 10pt;
+
+    margin: 1px;
+    padding: 2px 4px;
+
+    background-color: azure;
+
+    border: 1px solid #666;
+    border-radius: 3px;
+    box-shadow: 0.5px 0.5px 0.5px #333;
+}

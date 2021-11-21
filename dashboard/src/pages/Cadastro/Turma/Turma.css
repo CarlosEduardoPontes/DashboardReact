@@ -1,0 +1,53 @@
+.h3-titulo{
+    margin: 0 auto;
+}
+
+.label-float{
+    max-width: 600px;
+}
+
+.div-form-main{
+    float: left;
+    width: 50%;
+    min-width: 600px;
+}
+
+.div-alunos{
+    float: left;
+    width: 40%;
+    min-width: 400px;
+}
+
+.h4-turma{
+    margin: unset;
+}
+
+.div-table{
+    height: 200px;
+    overflow: scroll;
+
+    margin-top: 10px;
+
+    box-shadow: 1px 1px 2px #333;
+
+    border: 1px solid #666;
+}
+
+.tbl-alunos{
+    width: 100%;
+
+    border-spacing: unset;
+}
+
+.tbl-alunos td, .tbl-alunos th{
+    font-size: 0.5em;
+
+    border-bottom: 1px solid #666;
+    border-right: 1px solid #666;
+    
+
+}
+
+.div-materias{
+    width: 100%;
+}

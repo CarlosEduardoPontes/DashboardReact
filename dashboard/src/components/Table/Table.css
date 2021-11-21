@@ -1,0 +1,18 @@
+.div-table{
+    margin: 1%;
+}
+
+.div-table table{
+    border-spacing: 0;
+
+    box-shadow: 1px 1px 2px #222;
+}
+
+.div-table tr:hover{
+    background-color: rgba(151, 213, 248, 0.3);
+}
+
+.div-table th, .div-table td{
+    border: 1px solid #444;
+    padding: 8px;
+}

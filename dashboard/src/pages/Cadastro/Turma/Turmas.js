@@ -1,13 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import Table from '../../../components/Table/Table';
-import api from '../../../utils/api';
+import React, { useEffect, useReducer } from 'react'
+import { useState } from 'react/cjs/react.development'
+import MateriaTurma from '../../../components/Instituicao/MateriaTurma/MateriaTurma';
+import Table from '../../../components/Table/Table'
+import api from '../../../utils/api'
 import '../Cadastro.css'
+import './Turma.css'
 
+const Turmas = props =>{
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
 
-export const Turmas = props =>{
     const [alunoDL, setAlunoDL] = useState([]);
     const [alunos, setAlunos] = useState([]);
     const [alunosTurma, setAlunosTurma] = useState([]);
+
+    const [professores, setProfessores] = useState([]);
+
+    const [materias, setMaterias] = useState([]);
+    const [materiasTurma, setMateriasTurma] = useState([]);
+    const [materiaDL, setMateriaDL] = useState('');
 
     useEffect( () => {
         async function getAlunos(){
@@ -16,13 +26,33 @@ export const Turmas = props =>{
             setAlunos(alunos);
         }
 
+        async function getProfessores(){
+            const professores = await api('/professor', 'GET');
+
+            setProfessores(professores);
+        }
+
+        async function getMaterias(){
+            const materias = await api('/materia', 'GET');
+
+            setMaterias(materias);
+        }
+
         getAlunos();
+        getProfessores();
+        getMaterias();
     }, []);
 
     const handleAlunoDL = (event) => {
         const { value } = event.target;
 
         setAlunoDL( value );
+    }
+
+    const handleMateriaDL = (ev) =>{
+        const {value} = ev.target;
+
+        setMateriaDL( value );
     }
 
     const alunosColumns = [
@@ -57,9 +87,47 @@ export const Turmas = props =>{
             at.push(alunoTabela);
 
             setAlunosTurma( at );
-            
+            forceUpdate();
         }
     }
+
+    function addMateria(ev){
+        ev.preventDefault();
+
+        const materiaFind = materias.find( materia => materiaDL == materia.nome);
+
+        if (typeof materiaFind !== 'undefined'){
+            materiaFind.professores = [];
+
+            const mt = materiasTurma;
+            mt.push(materiaFind);
+
+            console.log(mt);
+
+            setMateriasTurma(mt);
+        }
+
+        forceUpdate();
+    }
+
+    function addProfessorMateria(materia, professor){
+        const materiasNew = materiasTurma;
+
+        const materiaIndex = materiasNew.findIndex( (m) => m.nome === materia.nome);
+
+        materiasNew[materiaIndex].professores.push(professor);
+
+        forceUpdate();
+    }
+
+    function renderAlunosOptions(){
+        return alunos.map( aluno => 
+            (
+                <option>{aluno.nome}</option>
+            )
+        )
+    }
+
 
     return(
         <main class='container'>
@@ -68,7 +136,7 @@ export const Turmas = props =>{
                 <div className='div-form-main'>
                     <h3 className='h3-titulo'>Cadastro de Turmas</h3>
                     <div class='label-float'>
-                        <input type='number' placeholder='Nome *'></input>
+                        <input type='text' placeholder='Nome *'></input>
                         <label for='id_instituicao'></label>
                     </div>
                                 
@@ -107,11 +175,7 @@ export const Turmas = props =>{
                             onChange={handleAlunoDL}
                         />
                         <datalist id='alunos'>
-                        {alunos.map( aluno => 
-                            (
-                                <option>{aluno.nome}</option>
-                            )
-                        )}
+                        {renderAlunosOptions()}
                         </datalist>
 
                         <button onClick={addAluno} className='btn-add'>Adicionar</button>
@@ -122,12 +186,31 @@ export const Turmas = props =>{
                 <div className='div-materias'>
                 <h4 className='h4-turma'>Matérias</h4>
                     <div class='label-float'>
-                        <input type='text' className='datalist-materias' placeholder="Digite o nome da matéria" list='materias' />
+                        <input 
+                            defaultValue={materiaDL}
+                            type='text' 
+                            className='datalist-materias' 
+                            placeholder="Digite o nome da matéria" 
+                            list='materias'
+                            onChange={handleMateriaDL}
+                        />
                         <datalist id='materias'>
+                        {
+                            materias.map( materia => ( <option>{materia.nome}</option> ))
+                        }
                         </datalist>
 
-                        <button className='btn-add'>Adicionar</button>
+                        <button onClick={addMateria} className='btn-add'>Adicionar</button>
                     </div>
+                    {
+                        materiasTurma.map( materiaTurma => (
+                            <MateriaTurma 
+                                materia={materiaTurma} 
+                                professores={professores} 
+                                addProfessorMateria={addProfessorMateria}
+                            />
+                        ))
+                    }
                 </div>
                 
                 <div>
@@ -139,3 +222,5 @@ export const Turmas = props =>{
         
     )
 }
+
+export {Turmas};

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
@@ -6,6 +6,8 @@ import * as AiIcons from 'react-icons/ai'
 import './SideBar.css'
 import { SideBarData } from './SideBarData'
 import { SubMenu } from './SubMenu'
+
+import StoreContext from './store/Context';
 
 const Nav = styled.div`
     background-color: #15171c;
@@ -45,6 +47,8 @@ const SideBarWrap = styled.nav`
 export const SideBar = () => {
     const [sidebar, setSidebar] = useState(false);
 
+    const { setSession } = useContext(StoreContext);
+
     const showSidebar = () => setSidebar(!sidebar); 
 
     return (
@@ -54,7 +58,7 @@ export const SideBar = () => {
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </NavIcon>
                 <NavIcon>
-                    <FaIcons.FaPowerOff className='logout'/>
+                    <FaIcons.FaPowerOff onClick={() => setSession(null)} className='logout'/>
                 </NavIcon>
             </Nav>
             <SideBarNav sidebar={sidebar}>

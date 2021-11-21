@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 
+import './Table.css';
+
 /**
  * 
  * @param {object} props contendo os atributos:

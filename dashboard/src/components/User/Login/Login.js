@@ -59,7 +59,7 @@ console.log(retorno);
 
   return (
     <main>
-      <header>Ppppppppppppppppppppppppppppppppppppppp</header>
+      <header></header>
       <aside className="logo-login">
       <a href='/'>
             <img src={logo} alt='Conecta'/>
