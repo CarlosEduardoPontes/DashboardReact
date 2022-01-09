@@ -11,6 +11,7 @@ function HomeAluno(){
   return (
     <Router>
     <SideBar tipo='aluno' />
+    <p>Olá Aluno, seja bem vindo a sua tarefa</p>
     <Switch>
          
     </Switch>

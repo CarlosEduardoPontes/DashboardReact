@@ -20,6 +20,7 @@ export const HomeProfessor = () => {
   return (
     <Router>
       <SideBar tipo='professor' />
+      <p>Olá Professor, seja bem vindo a sua área do Professor</p>
       <Switch>
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />
