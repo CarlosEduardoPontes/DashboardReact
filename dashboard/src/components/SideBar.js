@@ -47,7 +47,7 @@ const SideBarWrap = styled.nav`
 export const SideBar = () => {
     const [sidebar, setSidebar] = useState(false);
 
-    const { setSession } = useContext(StoreContext);
+    const { session, setSession } = useContext(StoreContext);
 
     const showSidebar = () => setSidebar(!sidebar); 
 
@@ -57,7 +57,10 @@ export const SideBar = () => {
                 <NavIcon to='#'>
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </NavIcon>
-                <NavIcon>
+                <div className='div-saudacao'>
+                    <p className='p-saudacao'>Olá, {session.usuario}!</p>
+                </div>
+                <NavIcon >
                     <FaIcons.FaPowerOff onClick={() => setSession(null)} className='logout'/>
                 </NavIcon>
             </Nav>
