@@ -83,18 +83,18 @@ export const SideBarDataProfessor = [
 
         subNav: [
             {
-                title: 'Alunos',
-                path: '/alunos',
+                title: 'Exercícios',
+                path: '/exercícios',
                 icon: <IoIcons.IoIosPaper />,
             },
             {
-                title: 'Turmas',
-                path: '/turmas',
+                title: 'Tarefas',
+                path: '/tarefas',
                 icon: <IoIcons.IoIosPaper />, 
             },
             {
-                title: 'Matérias',
-                path: '/materias',
+                title: 'Corrigir tarefas',
+                path: '/corrigir_tarefas',
                 icon: <IoIcons.IoIosPaper />, 
             }
         ]
@@ -112,8 +112,13 @@ export const SideBarDataProfessor = [
                 icon: <IoIcons.IoIosPaper />,
             },
             {
-                title: 'Professores',
-                path: '/instituicao/professores',
+                title: 'Exercícios',
+                path: '/professor/exercicios',
+                icon: <IoIcons.IoIosPaper />, 
+            },
+            {
+                title: 'Tarefas',
+                path: '/professor/tarefas',
                 icon: <IoIcons.IoIosPaper />, 
             },
             {
@@ -137,7 +142,7 @@ export const SideBarDataProfessor = [
 
 export const SideBarDataAluno = [
     {
-        title: 'Cadastrar',
+        title: 'Realizar',
         path: '/overview',
         icon: <AfIcons.FaCashRegister />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -145,18 +150,13 @@ export const SideBarDataAluno = [
 
         subNav: [
             {
-                title: 'Professor',
-                path: '/professor',
+                title: 'Tarefas',
+                path: '/tarefas',
                 icon: <IoIcons.IoIosPaper />, 
             },
             {
-                title: 'Turmas',
-                path: '/turmas',
-                icon: <IoIcons.IoIosPaper />, 
-            },
-            {
-                title: 'Matérias',
-                path: '/materias',
+                title: 'Quiz',
+                path: '/quiz',
                 icon: <IoIcons.IoIosPaper />, 
             }
         ]
@@ -169,25 +169,10 @@ export const SideBarDataAluno = [
         iconOpened: <RiIcons.RiArrowUpSFill />,
         subNav: [
             {
-                title: 'Alunos',
-                path: '/instituicao/alunos',
+                title: 'Tarefas realizadas',
+                path: '/aluno/tarefas',
                 icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: 'Professores',
-                path: '/instituicao/professores',
-                icon: <IoIcons.IoIosPaper />, 
-            },
-            {
-                title: 'Turmas',
-                path: '/instituicao/turmas',
-                icon: <IoIcons.IoIosPaper />, 
-            },
-            {
-                title: 'Materias',
-                path: '/instituicao/materias',
-                icon: <IoIcons.IoIosPaper />, 
-            },
+            }
         ]
     },
     {
