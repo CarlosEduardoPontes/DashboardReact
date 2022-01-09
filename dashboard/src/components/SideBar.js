@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 import './SideBar.css'
-import { SideBarData } from './SideBarData'
+import { SideBarData, SideBarDataProfessor, SideBarDataAluno } from './SideBarData'
 import { SubMenu } from './SubMenu'
 
 import StoreContext from './store/Context';
@@ -44,12 +44,30 @@ const SideBarWrap = styled.nav`
 `
 
 
-export const SideBar = () => {
+export const SideBar = (props) => {
     const [sidebar, setSidebar] = useState(false);
 
     const { session, setSession } = useContext(StoreContext);
-
+    
     const showSidebar = () => setSidebar(!sidebar); 
+
+
+    const sideItensFunc = () => {
+        switch(props.tipo){
+            case 'instituicao':
+                return SideBarData;
+                break;
+            case 'professor':
+                return SideBarDataProfessor;
+                break;
+            case 'aluno':
+                return SideBarDataAluno;
+                break;
+        }
+    }
+
+    const sideItens = sideItensFunc();
+
 
     return (
         <>
@@ -69,7 +87,7 @@ export const SideBar = () => {
                     <NavIcon to='#'>
                         <AiIcons.AiOutlineClose onClick={showSidebar}/>
                     </NavIcon>
-                    {SideBarData.map((item, index) =>{ 
+                    {sideItens.map((item, index) =>{ 
                         return<SubMenu item={item} key={index} />
                     })}
                 </SideBarWrap>

@@ -19,7 +19,7 @@ import { InstituicaoTurma } from '../../../components/Instituicao/Turma';
 export const HomeProfessor = () => {
   return (
     <Router>
-      <SideBar />
+      <SideBar tipo='professor' />
       <Switch>
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />

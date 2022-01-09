@@ -21,7 +21,7 @@ import { InstituicaoTurma } from '../../../components/Instituicao/Turma';
 const HomeInstituicao = () => {
   return (
     <Router>
-      <SideBar />
+      <SideBar tipo='instituicao' />
       <Switch>
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />

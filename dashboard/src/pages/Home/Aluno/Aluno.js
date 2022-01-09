@@ -1,12 +1,20 @@
 import React from 'react';
 import '../Home.css';
 
+import { Switch, Route } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
+import StoreContext from '../../../components/store/Context';
+import {SideBar} from '../../../components/SideBar';
+
 function HomeAluno(){
 
   return (
-     <div>
-       <h1> Home do Aluno</h1>
-     </div>
+    <Router>
+    <SideBar tipo='aluno' />
+    <Switch>
+         
+    </Switch>
+  </Router>
   );
 };
 
