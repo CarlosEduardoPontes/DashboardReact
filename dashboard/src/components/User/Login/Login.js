@@ -58,7 +58,7 @@ console.log(retorno);
   }
 
   return (
-    <main>
+    <main className='contem'>
       <header></header>
       <aside className="logo-login">
       <a href='/'>
@@ -68,9 +68,10 @@ console.log(retorno);
 
       <div className="user-login">
       <h1 className="user-login__title">Acessar o Sistema</h1>
+      <h3>Faça seu login</h3>
       <form onSubmit={onSubmit}>
         <div className="user-login__form-control">
-          <label htmlFor="user">Usuário</label>
+          <label htmlFor="user" >Usuário</label>
           <input
             id="user"
             type="text"

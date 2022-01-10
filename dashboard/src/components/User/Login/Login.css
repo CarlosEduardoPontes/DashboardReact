@@ -1,3 +1,7 @@
+.contem{
+    background-color: #1e192c;
+}
+
 .logo-login{
   display: inline-block;
   margin: 0px;
@@ -10,13 +14,14 @@
     margin: 100px;
     padding: 15px;
     float: right;
-    border-radius: 1;
+    border-radius: 10px 5%;
     box-shadow: 2px 2px 2px 2px;
+    
   }
   
   .user-login__title {
     font-size: 40px;
-    color: #0ABDE3;
+    color: #f5f9fa;
     margin-bottom: 50px;
     text-align: center;
   }
@@ -42,7 +47,7 @@
   
   .user-login__form-control input:focus {
     outline: 0;
-    border-color: #5988df;
+    border-color: #f8f9fa;
   }
   
   .user-login__submit-button {
@@ -76,6 +81,10 @@
 
   .a-registrar:hover{
       color: #3b4;
+  }
+  .user-login__submit-button{
+    border-radius: 10px 5%;
+
   }
 
   footer{
