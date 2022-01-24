@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Table from '../Table/Table';
-
 import api from '../../utils/api';
+import '../../../src/pages/Cadastro/Cadastro.css'
 
 export const InstituicaoProfessor = props =>{
     let [itens, setItens] = useState([]);
@@ -53,8 +53,10 @@ export const InstituicaoProfessor = props =>{
 
     return(
         <main>
-            <h1>Lista de Professores</h1>
-            <Table columns={columns} itens={itens}></Table>
+            <h1 className='title-list'> Professores </h1>
+                <div className='lista-Prof'>
+                    <Table columns={columns} itens={itens}></Table>
+                </div>
         </main>
         
     )

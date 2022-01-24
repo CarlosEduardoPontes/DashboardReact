@@ -16,13 +16,32 @@ import { InstituicaoMateria } from '../../../components/Instituicao/Materia';
 import { InstituicaoProfessor } from '../../../components/Instituicao/Professor';
 import { InstituicaoTurma } from '../../../components/Instituicao/Turma';
 
+import { Chart } from "react-google-charts";
 
+export const data = [
+  ["Task", "Hours per Day"],
+  ["Work", 11],
+  ["Eat", 2],
+  ["Commute", 2],
+  ["Watch TV", 2],
+  ["Sleep", 7], // CSS-style declaration
+];
 
 const HomeInstituicao = () => {
   return (
     <Router>
       <SideBar tipo='instituicao' />
-      <p>Olá Colégio, seja bem vindo a sua área Administrativa</p>
+      <p>Bem vindo a sua área Administrativa</p>
+        <div className='area-grafico'>
+            <Chart
+            chartType="PieChart"
+            width="100%"
+            height="400px"
+            data={data}
+            />
+        </div>
+      
+
       <Switch>
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />
