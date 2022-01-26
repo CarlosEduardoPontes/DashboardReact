@@ -16,7 +16,7 @@ import HomeAluno from './pages/Home/Aluno/Aluno';
 import HomeInstituicao from './pages/Home/Instituicao/Instituicao';
 import HomeProfessor from './pages/Home/Professor/Professor';
 
-import Instituicao from './pages/Cadastro/Instituicao/Instituicao'
+import { Instituicao } from './pages/Cadastro/Instituicao/Instituicao'
 
 function App() {
   return (
