@@ -16,33 +16,16 @@ import { InstituicaoMateria } from '../../../components/Instituicao/Materia';
 import { InstituicaoProfessor } from '../../../components/Instituicao/Professor';
 import { InstituicaoTurma } from '../../../components/Instituicao/Turma';
 
-import { Chart } from "react-google-charts";
-
-export const data = [
-  ["Task", "Hours per Day"],
-  ["Work", 11],
-  ["Eat", 2],
-  ["Commute", 2],
-  ["Watch TV", 2],
-  ["Sleep", 7], // CSS-style declaration
-];
+import Overview from '../../../components/Instituicao/Overview';
 
 const HomeInstituicao = () => {
   return (
     <Router>
-      <SideBar tipo='instituicao' />
-      <p>Bem vindo a sua área Administrativa</p>
-        <div className='area-grafico'>
-            <Chart
-            chartType="PieChart"
-            width="100%"
-            height="400px"
-            data={data}
-            />
-        </div>
-      
-
+        <SideBar tipo='instituicao' />
       <Switch>
+        <Route path='/home/instituicao' exact component={Overview} />
+        <Route path='/overview' exact component={Overview} />
+
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />
         <Route path='/instituicao' exact component={Instituicao} />
@@ -51,8 +34,8 @@ const HomeInstituicao = () => {
 
         <Route path='/instituicao/alunos' exact component={InstituicaoAluno} />
         <Route path='/instituicao/materias' exact component={InstituicaoMateria} />
-        <Route path='/instituicao/professor' exact component={InstituicaoProfessor} />
-        <Route path='/instituicao/turma' exact component={InstituicaoTurma} />   
+        <Route path='/instituicao/professores' exact component={InstituicaoProfessor} />
+        <Route path='/instituicao/turmas' exact component={InstituicaoTurma} />   
       </Switch>
     </Router>
   )

@@ -11,6 +11,8 @@ export const InstituicaoProfessor = props =>{
 
             const professores = await api('/professor', 'GET');
         
+            console.log(professores);
+            
             let i = [];
                 
             i = professores.map(
