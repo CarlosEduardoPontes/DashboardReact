@@ -15,6 +15,10 @@ export const InstituicaoAluno = props =>{
                 
             i = alunos.map(
                 (aluno) => {
+                    const datas = aluno.data_nasc.split('-');
+
+                    const data = datas[2] + '/' + datas[1] + '/' + datas[0];
+
                     const r = {
                         id: aluno.id,
                         values: [
@@ -28,7 +32,7 @@ export const InstituicaoAluno = props =>{
                             },
                             {
                                 "name": "data_nasc",
-                                "value": aluno.data_nasc
+                                "value": data
                             }
                         ] 
                     };

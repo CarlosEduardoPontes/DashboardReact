@@ -1,5 +1,7 @@
 .div-table{
-    margin: 1%;
+    display: inline-block;
+
+    margin: 1% auto;
 }
 
 .div-table table{

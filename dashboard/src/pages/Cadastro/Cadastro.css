@@ -39,15 +39,22 @@ input{
 
 .lista-alunos{
     margin-left: 490px;
-    color: blue;
+    color: black;
 }
 .lista-Prof{
     margin-left: 490px;
-    color: blue;
+    color: black;
 }
+
+.lista-turma{
+    
+    margin: 0 auto;
+    color: black;
+}
+
 .lista-materias{
     margin-left: 556px;
-    color: blue;
+    color: black;
 }
 .title-list{
     text-align: center;

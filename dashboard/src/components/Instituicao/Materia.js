@@ -21,10 +21,6 @@ export const InstituicaoMateria = props =>{
                             {
                                 "name": "nome",
                                 "value": materia.nome
-                            },
-                            {
-                                "name": "id_instituicao",
-                                "value": materia.id_instituicao
                             }
                         ] 
                     };
@@ -44,10 +40,6 @@ export const InstituicaoMateria = props =>{
         {
             "name": "nome",
             "label": "Nome"
-        },
-        {
-            "name": "id_instituicao",
-            "label": "id_instituicao"
         }
     ]
 
