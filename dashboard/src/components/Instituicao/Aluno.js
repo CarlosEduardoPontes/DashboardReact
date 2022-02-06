@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Table from '../Table/Table';
 import api from '../../utils/api';
 import '../../../src/pages/Cadastro/Cadastro.css'
 
+import StoreContext from '../store/Context';
+
 export const InstituicaoAluno = props =>{
     let [itens, setItens] = useState([]);
+
+    const { session } = useContext(StoreContext);
 
     useEffect( () => {
         async function getAlunos(){
 
-            const alunos = await api('/aluno', 'GET');
-        
+            const alunos = await api('/aluno/' + session.id, 'GET')
+            .catch( e => console.log(e));
+
+            console.log(alunos);
+            
             let i = [];
                 
             i = alunos.map(
@@ -65,7 +72,6 @@ export const InstituicaoAluno = props =>{
 
     console.log(columns);
 
-    console.log(itens);
 
     return(
         <main>

@@ -6,6 +6,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import StoreContext from '../../../components/store/Context';
 import {SideBar} from '../../../components/SideBar';
 
+
+
 function HomeAluno(){
 
   return (

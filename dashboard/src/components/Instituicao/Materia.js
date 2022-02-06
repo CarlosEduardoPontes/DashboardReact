@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Table from '../Table/Table';
 import api from '../../utils/api';
-import '../../../src/pages/Cadastro/Cadastro.css'
+import '../../../src/pages/Cadastro/Cadastro.css';
+
+import StoreContext from '../store/Context';
 
 export const InstituicaoMateria = props =>{
     let [itens, setItens] = useState([]);
+    
+    const {session} = useContext(StoreContext);
 
     useEffect( () => {
         async function getMaterias(){
 
-            const materias = await api('/materia', 'GET');
+            const materias = await api('/materia/' + session.id, 'GET');
         
             let i = [];
                 
