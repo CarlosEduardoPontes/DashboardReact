@@ -1,5 +1,5 @@
 .contem{
-    background-color: #1e192c;
+    background-color: #FE8B86;
     display: flex; 
     justify-content: space-between;
 }
@@ -13,7 +13,7 @@
 
 .user-login {
     display: inline-block;
-    
+    background-color: #f08585;
     border-radius: 10px 5%;
     box-shadow: 2px 2px 2px 2px; 
     margin: 60px; 
@@ -23,7 +23,7 @@
   
   .user-login__title {
     font-size: 32px;
-    color: #551A8B;
+    color: #624CD3;
     margin-bottom: 50px;
     text-align: center;
   }
@@ -63,13 +63,12 @@
   }
 
   .div-registrar{
-      border-top: 3px solid rgb(243, 105, 100);
-      border-bottom: 3px solid rgb(230, 105, 100);
-      background-color: #FE8B86;
+      border-top: 3px solid #705adf;
+      border-bottom: 3px solid #705adf;
       text-align: center;
       align-items: center;
       color: whitesmoke;
-
+      background-color: #624CD3;
       font-size: 1.2em;
   }
 
@@ -80,6 +79,7 @@
     margin-left: 10px;
     transition-duration: 0.5s;
     cursor: pointer;
+   
   }
 
   .a-registrar:hover{
@@ -99,7 +99,7 @@
     
   }
   .user-login__submit-button:hover{
-    background-color: #551A8B;
+    background-color: #624CD3;
     cursor:pointer;
     box-shadow: 0px 0px 12px 2px rgba(250, 250, 250, 0.19), 0px 0px 12px 2px rgba(252, 252, 252, 0.19);
     border: none;
@@ -115,6 +115,7 @@
     z-index: 999;
     margin-left: auto; /* linha modificada */
     margin-right: auto; /* linha adicionada */
+    
   }
 
   .copy{
