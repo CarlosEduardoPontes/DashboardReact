@@ -15,13 +15,16 @@ import { InstituicaoAluno } from '../../../components/Instituicao/Aluno';
 import { InstituicaoMateria } from '../../../components/Instituicao/Materia';
 import { InstituicaoProfessor } from '../../../components/Instituicao/Professor';
 import { InstituicaoTurma } from '../../../components/Instituicao/Turma';
+import OverviewProf from '../../../components/Instituicao/OverviewProf';
 
 export const HomeProfessor = () => {
   return (
     <Router>
       <SideBar tipo='professor' />
-      <p>Olá Professor, seja bem vindo a sua área do Professor</p>
       <Switch>
+        <Route path='/home/professor ' exact component={OverviewProf} />
+        <Route path='overview' exact component={OverviewProf} /> 
+
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />
         <Route path='/instituicao' exact component={Instituicao} />

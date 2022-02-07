@@ -5,11 +5,10 @@ import { Chart } from "react-google-charts";
 export default () => {
     const data = [
         ["Task", "Hours per Day"],
-        ["Work", 11],
-        ["Eat", 2],
-        ["Commute", 2],
-        ["Watch TV", 2],
-        ["Sleep", 7], // CSS-style declaration
+        ["Alunos", 110],
+        ["Exercícios", 27],
+        ["Tarefas", 8],
+        ["Professores", 10], // CSS-style declaration
       ];
 
     return (

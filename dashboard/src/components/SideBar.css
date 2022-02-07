@@ -1,11 +1,14 @@
 .logout{
-    color: red;
+    color: rgb(224, 20, 20);
     display: inline-block;
-    
-    vertical-align: middle;
-    
-    
+    vertical-align: middle; 
 }
+.logout:hover{
+    color: rgb(247, 1, 1);
+    font-size: 39px;
+    transition-duration: 0.4s;
+}
+
 .div-saudacao{
     margin: 450px;
     padding: 100px;
