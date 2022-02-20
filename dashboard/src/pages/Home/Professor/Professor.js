@@ -10,7 +10,8 @@ import { Professor } from '../../Cadastro/Professor/Professor';
 import { Instituicao } from '../../Cadastro/Instituicao/Instituicao'
 import { Materias } from '../../Cadastro/Materias/Materias';
 import { Turmas } from '../../Cadastro/Turma/Turmas';
-
+import { Exercicio } from '../../Cadastro/Professor/Exercicio';
+import { Tarefa } from '../../Cadastro/Professor/Tarefa';
 import { InstituicaoAluno } from '../../../components/Instituicao/Aluno';
 import { InstituicaoMateria } from '../../../components/Instituicao/Materia';
 import { InstituicaoProfessor } from '../../../components/Instituicao/Professor';
@@ -24,7 +25,8 @@ export const HomeProfessor = () => {
       <Switch>
         <Route path='/home/professor ' exact component={OverviewProf} />
         <Route path='overview' exact component={OverviewProf} /> 
-
+        <Route path='/exercicios' exact component={Exercicio} />
+        <Route path='/tarefas' exact component={Tarefa} />
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />
         <Route path='/instituicao' exact component={Instituicao} />

@@ -84,7 +84,7 @@ export const SideBarDataProfessor = [
         subNav: [
             {
                 title: 'Exercícios',
-                path: '/exercícios',
+                path: '/exercicios',
                 icon: <IoIcons.IoIosPaper />,
             },
             {
