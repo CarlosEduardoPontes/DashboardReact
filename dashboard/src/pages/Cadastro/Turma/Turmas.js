@@ -46,19 +46,19 @@ const Turmas = props =>{
 
     useEffect( () => {
         async function getAlunos(){
-            const alunos = await api('/aluno', 'GET');
+            const alunos = await api('/aluno/' + session.id, 'GET');
 
             setAlunos(alunos);
         }
 
         async function getProfessores(){
-            const professores = await api('/professor', 'GET');
+            const professores = await api('/professor/' + session.id, 'GET');
 
             setProfessores(professores);
         }
 
         async function getMaterias(){
-            const materias = await api('/materia', 'GET');
+            const materias = await api('/materia/' + session.id, 'GET');
 
             setMaterias(materias);
         }
