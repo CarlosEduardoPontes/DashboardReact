@@ -108,7 +108,7 @@ export const SideBarDataProfessor = [
         subNav: [
             {
                 title: 'Alunos',
-                path: '/instituicao/alunos',
+                path: '/professor/alunos',
                 icon: <IoIcons.IoIosPaper />,
             },
             {
@@ -123,12 +123,12 @@ export const SideBarDataProfessor = [
             },
             {
                 title: 'Turmas',
-                path: '/instituicao/turmas',
+                path: '/professor/turmas',
                 icon: <IoIcons.IoIosPaper />, 
             },
             {
                 title: 'Materias',
-                path: '/instituicao/materias',
+                path: '/professor/materias',
                 icon: <IoIcons.IoIosPaper />, 
             },
         ]
