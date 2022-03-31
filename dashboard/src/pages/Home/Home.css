@@ -71,7 +71,17 @@
   }
 /*--*/
 
+.table{
+background-color: red;
+padding-top: 50px;
+border-radius: 2;
+border-color: black;
 
+}
+.coluna{
+  padding: 10px;
+  margin: 10px;
+}
 
 
   
