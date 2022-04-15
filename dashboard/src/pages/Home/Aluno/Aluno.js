@@ -14,29 +14,10 @@ function HomeAluno(){
   return (
     <Router>
       <SideBar tipo='aluno' /> 
-
-            <Container className='table'>
-              <Row>
-                <Col xs={4} className='coluna'>
-                  <h3>História</h3>
-                  <p>Conteudo do campo historia</p>
-                  <p>Conteudo do campo historia</p>
-                  <p>Conteudo do campo historia</p>
-                </Col>
-                <Col sm={4} className='coluna'>
-                  <h3>Geografia</h3>
-                  <p>Conteudo do campo Geografia</p>
-                  <p>Conteudo do campo Geografia</p>
-                  <p>Conteudo do campo Geografia</p>
-                </Col>
-                <Col sm={4} className='coluna'>
-                  <h3>Portugues</h3>
-                  <p>Conteudo do campo Portugues</p>
-                  <p>Conteudo do campo Portugues</p>
-                  <p>Conteudo do campo Portugues</p>
-                </Col>
-              </Row>
-            </Container> 
+            <h1>texto</h1>
+            <div >
+              texto 2
+            </div>     
       <Switch> 
         <Route path='/home/aluno ' exact component={OverviewAluno} />
         <Route path='overview' exact component={OverviewAluno} />      
