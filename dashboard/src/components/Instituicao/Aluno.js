@@ -13,7 +13,7 @@ export const InstituicaoAluno = props =>{
     useEffect( () => {
         async function getAlunos(){
 
-            const alunos = await api('aluno/' + session.id, 'GET')
+            const alunos = await api('/aluno/' + session.id, 'GET')
             .catch( e => console.log(e));
 
             console.log(alunos);
