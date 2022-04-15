@@ -1,19 +1,12 @@
 import React from "react";
 import '../../components/Instituicao/OverviewProf.css'
-
+import prof from '../../Images/prof.jpg'
 
 export default () => {
     return(
-        <div className="card-container">
-            <div Classname="image-container">
-                <div Classname="card-title">
-                    <h3>Título</h3>
-                </div>
-                <div Classname="card-body">
-                    <p>Conteudo</p>
-                </div>
-            </div>
-        </div>
+        <div>
+            <img height="550px" width="100%" padding='100px' src={prof} />
+        </div>          
     )
 
 }
