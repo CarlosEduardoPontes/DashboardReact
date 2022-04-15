@@ -4,7 +4,10 @@ import axios from 'axios'
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
 import '../Cadastro.css'
-
+/**
+ * 
+ * @returns objeto JSON
+ */
 const initialState = () => {
     return {
         'idMateria': '',
