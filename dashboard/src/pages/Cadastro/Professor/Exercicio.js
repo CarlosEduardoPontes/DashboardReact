@@ -83,16 +83,7 @@ export const Exercicio = props =>{
                 <h3>Cadastro de Exercício</h3>
                 
                 
-                <div class='label-float'>
-                    <Select 
-                        options={selectOptions} 
-                        onChange={handleChangeMateria.bind(this)} 
-                    />
-                    <p>
-                        You have selected <strong>{name}</strong> 
-                        whose id is <strong>{id}</strong>
-                    </p>
-                </div>
+               
                 
                 <div class='label-float'>
                     <input 

@@ -38,7 +38,7 @@ input{
 
 
 .lista-alunos{
-    margin-left: 490px;
+    margin-left: 530px;
     color: black;
 }
 .lista-Prof{
@@ -46,14 +46,8 @@ input{
     color: black;
 }
 
-.lista-turma{
-    
-    margin: 0 auto;
-    color: black;
-}
-
 .lista-materias{
-    margin-left: 556px;
+    margin-left: 558px;
     color: black;
 }
 .title-list{

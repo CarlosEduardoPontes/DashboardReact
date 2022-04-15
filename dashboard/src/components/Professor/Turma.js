@@ -72,7 +72,7 @@ export const ProfessorTurma = props =>{
     return(
         <main>
             <h1 className='title-list'> Turmas </h1>
-                <div className='lista-turma'>
+                <div className='lista-materias'>
                     <Table columns={columns} itens={itens}></Table>
                 </div>
         </main>
