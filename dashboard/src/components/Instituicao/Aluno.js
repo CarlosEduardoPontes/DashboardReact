@@ -13,7 +13,7 @@ export const InstituicaoAluno = props =>{
     useEffect( () => {
         async function getAlunos(){
 
-            const alunos = await api('/aluno/' + session.id, 'GET')
+            const alunos = await api('aluno/' + session.id, 'GET')
             .catch( e => console.log(e));
 
             console.log(alunos);
@@ -75,7 +75,7 @@ export const InstituicaoAluno = props =>{
 
     return(
         <main>
-            <h1 className='title-list'> Alunos </h1>
+            <h1 className='title-list'> Lista de Alunos </h1>
                 <div className='lista-alunos'>
                     <Table columns={columns} itens={itens}></Table>
                 </div>

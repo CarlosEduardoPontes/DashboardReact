@@ -5,7 +5,7 @@ import '../../../src/pages/Cadastro/Cadastro.css'
 
 import StoreContext from '../store/Context';
 
-export const ProfessorAluno = props =>{
+export const ProfAluno = props =>{
     let [itens, setItens] = useState([]);
 
     const { session } = useContext(StoreContext);
@@ -75,7 +75,7 @@ export const ProfessorAluno = props =>{
 
     return(
         <main>
-            <h1 className='title-list'> Alunos </h1>
+            <h1 className='title-list'> Lista de Alunos </h1>
                 <div className='lista-alunos'>
                     <Table columns={columns} itens={itens}></Table>
                 </div>

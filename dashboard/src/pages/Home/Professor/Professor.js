@@ -12,12 +12,13 @@ import { Materias } from '../../Cadastro/Materias/Materias';
 import { Turmas } from '../../Cadastro/Turma/Turmas';
 import { Exercicio } from '../../Cadastro/Professor/Exercicio';
 import { Tarefa } from '../../Cadastro/Professor/Tarefa';
-import { InstituicaoAluno } from '../../../components/Instituicao/Aluno';
-import { InstituicaoMateria } from '../../../components/Instituicao/Materia';
-import { ProfessorAluno } from '../../../components/Professor/Aluno';
+
+
+import { ProfAluno } from '../../../components/Professor/Aluno';
 import { ProfessorMateria } from '../../../components/Professor/Materia';
-import { InstituicaoProfessor } from '../../../components/Instituicao/Professor';
 import { ProfessorTurma } from '../../../components/Professor/Turma';
+
+import { InstituicaoProfessor } from '../../../components/Instituicao/Professor';
 import OverviewProf from '../../../components/Instituicao/OverviewProf';
 
 export const HomeProfessor = () => {
@@ -34,7 +35,7 @@ export const HomeProfessor = () => {
         <Route path='/instituicao' exact component={Instituicao} />
         <Route path='/materias' exact component={Materias} />
         <Route path='/turmas' exact component={Turmas} />  
-        <Route path='/professor/alunos' exact component={ProfessorAluno} />
+        <Route path='/professor/alunos' exact component={ProfAluno} /> 
         <Route path='/professor/materias' exact component={ProfessorMateria} />
         <Route path='/instituicao/professor' exact component={InstituicaoProfessor} />
         <Route path='/professor/turmas' exact component={ProfessorTurma} />   

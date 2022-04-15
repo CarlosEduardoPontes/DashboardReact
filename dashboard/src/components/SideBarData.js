@@ -76,7 +76,7 @@ export const SideBarData = [
 export const SideBarDataProfessor = [
     {
         title: 'Cadastrar',
-        path: '/overview',
+        path: '/overviewProf',
         icon: <AfIcons.FaCashRegister />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -101,7 +101,7 @@ export const SideBarDataProfessor = [
     },
     {
         title: 'Listas',
-        path: '/overview',
+        path: '/overviewProf',
         icon: <BsIcons.BsCardChecklist />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
