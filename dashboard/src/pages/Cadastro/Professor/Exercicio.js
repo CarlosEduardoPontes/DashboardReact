@@ -67,10 +67,12 @@ export const Exercicio = props =>{
         ev.preventDefault();
 
         form.idProfessor = session.id;
+        form.exercicioAlternativas = alternativa;
+
         console.log(form);
 
        
-             api('/professor', 'POST', form)
+             api('/exercicio', 'POST', form)
             .then( () => alert('Cadastro efetuado com sucesso!'))
             .catch( err => {console.log(err); alert('Falha ao cadastrar!')}); 
         
@@ -100,9 +102,14 @@ export const Exercicio = props =>{
       }
 
       const getMateria = async () => {
-        const materias = await api('/list/professor/materia/' + session.id, 'POST', form);
-
+        const materias = await api('/list/professor/materia/' + session.id, 'GET', form);
+console.log(materias);
         setMateria(materias);
+
+        const f = form;
+        f.idMateria = materias[0].id;
+
+        setForm(f);
       };
 
       useEffect( () => {
@@ -195,7 +202,7 @@ export const Exercicio = props =>{
                 <div class='label-float'>
                     <select onChange={handleMateria} defaultValue={form.idMateria}>
                         {materia.map( m => 
-                            <option >teste</option>
+                            <option value={m.id}>{m.nome}</option>
                             )}
                     </select>
                 </div>
