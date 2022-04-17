@@ -54,3 +54,29 @@ input{
     text-align: center;
     align-items: center;
 }
+
+.btn-remove-alternativa{
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    height: 50px;
+    margin: 5px;
+}
+.btn-remove-alternativa:hover{
+    background-color: rgb(218, 18, 18);
+    font-weight: bold;
+}
+.btn-add-alternativa{
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    height: 50px;
+    margin: 5px;
+}
+.btn-add-alternativa:hover{
+    background-color: rgb(17, 17, 160);
+    font-weight: bold;
+    
+}
