@@ -14,9 +14,13 @@ const initialState = () => {
     }
 }
 
+
+
 export const Tarefa = props =>{
     const { session } = useContext(StoreContext);
-
+    const [turma, setTurma] = useState([]);
+    const [materia, setMateria] = useState([]);
+    const [exercicio, setExercicio] = useState([]);
     const [spanErro, setSpanErro] = useState('');
     const [form, setForm] = useState(initialState);
 
@@ -58,15 +62,104 @@ export const Tarefa = props =>{
        setName(e.label)
       }
 
+      const getTurma = async () => {
+        const turmas = await api('/list/professor/turma/' + session.id, 'GET', form);
+console.log(turmas);
+        setTurma(turmas);
+
+        const f = form;
+        f.idTurma = turmas[0].id;
+        setForm(f);
+      }
+        const getMateria = async () => {
+            const materias = await api('/list/professor/materia/' + session.id, 'GET', form);
+    console.log(materias);
+            setMateria(materias);
+    
+            const f = form;
+            f.idMateria = materias[0].id;
+        setForm(f);
+      };
+
+        const getExercicio = async () => {
+        const exercicios = await api('/list/professor/materia/' + session.id, 'GET', form);
+        console.log(exercicios);
+        setExercicio(exercicios);
+
+        const f = form;
+        f.idExercicio = exercicios[0].id;
+        setForm(f);
+        };
+      
+      const handleMateria = (e) => {
+
+        setForm(
+            {
+                ...form,
+                idMateria: e.target.value
+            }
+        );
+        }
+
+        const handleExercicio = (e) => {
+
+            setForm(
+                {
+                    ...form,
+                    idExcercicio: e.target.value
+                }
+            );
+        }
+
       useEffect( () => {
-        
+        getTurma()
+        getMateria()
+        getExercicio()
       }, []);
+
+      const handleTurma = (e) => {
+
+        setForm(
+            {
+                ...form,
+                idTurma: e.target.value
+            }
+        );
+        
+    }
 
     return(
         <main class='container'>
             <form class='card' onSubmit={onSubmit}>
                 <h3>Cadastro de Tarefas</h3>
                 
+                <div class='label-float'>
+                    <label>Turma:&nbsp;</label>
+                    <select onChange={handleTurma} defaultValue={form.idTurma}>
+                        {turma.map( t => 
+                            <option value={t.id}>{t.nome}</option>
+                            )}
+                    </select>
+                </div>
+
+                <div class='label-float'>
+                <label>Matéria:&nbsp;</label>
+                    <select onChange={handleMateria} defaultValue={form.idMateria}>
+                        {materia.map( m => 
+                            <option value={m.id}>{m.nome}</option>
+                            )}
+                    </select>
+                </div>
+
+                <div class='label-float'>
+                <label>Exercício:&nbsp;</label>
+                    <select onChange={handleExercicio} defaultValue={form.idExercicio}>
+                        {exercicio.map( ex => 
+                            <option value={ex.id}>{ex.nome}</option>
+                            )}
+                    </select>
+                </div>
+
                 <div class='label-float'>
                     <input 
                         type='text' 

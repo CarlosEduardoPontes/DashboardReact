@@ -1,5 +1,5 @@
 import React from "react";
-
+import './../Instituicao/Overview.css'
 import { Chart } from "react-google-charts";
 
 export default () => {
@@ -13,7 +13,7 @@ export default () => {
 
     return (
         <>
-            <p>Bem vindo a sua área Administrativa</p>
+            <h1>Bem vindo a sua área Administrativa</h1>
             <div className='area-grafico'>
                 <Chart
                     chartType="PieChart"

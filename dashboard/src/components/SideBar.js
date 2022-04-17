@@ -15,6 +15,7 @@ const Nav = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    text-decoration: none;
     
 `
 const NavIcon = styled(Link)`
@@ -25,6 +26,7 @@ const NavIcon = styled(Link)`
     justify-content: flex-start;
     align-items: center;
     color: #624CD3;
+    text-decoration: none;
 `
 const SideBarNav = styled.nav`
     background-color: #15171c;
@@ -38,6 +40,7 @@ const SideBarNav = styled.nav`
     left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
     transition: 350ms;
     z-index:10;
+    text-decoration: none;
 `
 const SideBarWrap = styled.nav`
     width: 100%;

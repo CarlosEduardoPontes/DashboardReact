@@ -2,11 +2,13 @@
     color: rgb(224, 20, 20);
     display: inline-block;
     vertical-align: middle; 
+    font-size: 31px;
 }
 .logout:hover{
     color: rgb(247, 1, 1);
     font-size: 39px;
     transition-duration: 0.4s;
+    text-decoration: none;
 }
 
 .div-saudacao{
@@ -19,4 +21,5 @@
     text-align: right;
     color: white;
     align-items:flex-end;
+    font-size: 20px;
 }
