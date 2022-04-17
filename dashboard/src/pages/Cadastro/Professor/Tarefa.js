@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Select from 'react-select'
-import axios from 'axios'
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
 import '../Cadastro.css'
@@ -22,7 +20,6 @@ export const Tarefa = props =>{
     const [spanErro, setSpanErro] = useState('');
     const [form, setForm] = useState(initialState);
 
-    const [selectOptions, setSelectOptions] = useState([]);
     const [name, setName] = useState('');
     const [id, setId] = useState(0);
 
@@ -55,50 +52,20 @@ export const Tarefa = props =>{
 
         return igual;
     }
-    const  getOptions = async() =>{
-        const res = await axios.get('https://jsonplaceholder.typicode.com/users')
-        const data = res.data
-    
-        const options = data.map(d => ({
-          "value" : d.id,
-          "label" : d.name
-    
-        }))
-    
-        setSelectOptions(options)
-    
-      }
     
       const handleChangeMateria = (e) =>{
        setId(e.value)
        setName(e.label)
       }
-    
-      const componentDidMount = () =>{
-        getOptions()
-      }
 
-      
       useEffect( () => {
-        componentDidMount();
+        
       }, []);
 
     return(
         <main class='container'>
             <form class='card' onSubmit={onSubmit}>
                 <h3>Cadastro de Tarefas</h3>
-                
-                
-                <div class='label-float'>
-                     <Select 
-                        options={selectOptions} 
-                        onChange={handleChangeMateria.bind(this)} 
-                    />
-                    <p>
-                        You have selected <strong>{name}</strong> 
-                        whose id is <strong>{id}</strong>
-                    </p>
-                </div>
                 
                 <div class='label-float'>
                     <input 
@@ -135,7 +102,7 @@ export const Tarefa = props =>{
                 </div>
 
                 <div class='label-float'>
-                    <label>Data de ínicio</label>
+                    <label>Data de ínicio: </label>
                     <input 
                         type='datetime-local' 
                         placeholder='Data de ínicio *'
@@ -146,7 +113,7 @@ export const Tarefa = props =>{
                 </div>
 
                 <div class='label-float'>
-                    <label>Data de Fim</label><br/>
+                    <label>Data de Fim: </label>
                     <input 
                         type='datetime-local'
                         placeholder='Data do fim da Tarefa *'
