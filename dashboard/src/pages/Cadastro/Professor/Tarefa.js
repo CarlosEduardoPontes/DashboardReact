@@ -55,6 +55,10 @@ export const Tarefa = props =>{
         form.pontos = form.exercicios.reduce( (nota, add) => nota + Number(add.pontos), 0);
         console.log(form);
 
+
+        const materiaTurma = materia.find( m => m.id == form.idMateriaTurma);
+
+        form.idMateriaTurma = materiaTurma.materia_turma_id;
        
         api('/tarefa', 'POST', form)
         .then( () => alert('Cadastro efetuado com sucesso!'))
