@@ -6,6 +6,7 @@ import '../Cadastro.css'
 const initialState = () => {
     return {
         'idMateriaTurma': '',
+        'idTurma': '',
         'titulo': '',
         'desc': '',
         'pontos': '',
@@ -72,23 +73,30 @@ console.log(turmas);
         setForm(f);
       }
         const getMateria = async () => {
-            const materias = await api('/list/professor/materia/' + session.id, 'GET', form);
+            const materias = await api('/turma/materia/' + form.idTurma, 'GET', form);
     console.log(materias);
             setMateria(materias);
     
             const f = form;
-            f.idMateria = materias[0].id;
-        setForm(f);
+            //f.idMateriaTurma = '';
+            f.idMateriaTurma = materias[0].id;
+            setForm(f);
       };
 
         const getExercicio = async () => {
-        const exercicios = await api('/list/professor/materia/' + session.id, 'GET', form);
-        console.log(exercicios);
-        setExercicio(exercicios);
+            const exercicios = await api('/exercicio/materia/'+ form.idMateriaTurma + '/professor/' + session.id, 'GET', form);
+            console.log(exercicios);
+            setExercicio(exercicios);
 
-        const f = form;
-        f.idExercicio = exercicios[0].id;
-        setForm(f);
+            const f = form;
+            if(exercicios.length > 0){
+                f.idExercicio = exercicios[0].id;
+            }
+            else{
+                f.idExcercicio = '';
+            }
+
+            setForm(f);
         };
       
       const handleMateria = (e) => {
@@ -96,7 +104,7 @@ console.log(turmas);
         setForm(
             {
                 ...form,
-                idMateria: e.target.value
+                idMateriaTurma: e.target.value
             }
         );
         }
@@ -111,11 +119,24 @@ console.log(turmas);
             );
         }
 
-      useEffect( () => {
-        getTurma()
-        getMateria()
-        getExercicio()
+      useEffect( async () => {
+        await getTurma()
+        await getMateria();
+        //await getExercicio();
       }, []);
+
+      useEffect( async () => {
+        if(form.idTurma !== ''){
+            await getMateria();
+        }
+      }, [form.idTurma]);
+
+      useEffect( async () => {
+        if(form.idMateriaTurma !== ''){
+            await getExercicio();
+        }
+        
+      }, [form.idMateriaTurma]);
 
       const handleTurma = (e) => {
 
@@ -142,23 +163,8 @@ console.log(turmas);
                     </select>
                 </div>
 
-                <div class='label-float'>
-                <label>Matéria:&nbsp;</label>
-                    <select onChange={handleMateria} defaultValue={form.idMateria}>
-                        {materia.map( m => 
-                            <option value={m.id}>{m.nome}</option>
-                            )}
-                    </select>
-                </div>
-
-                <div class='label-float'>
-                <label>Exercício:&nbsp;</label>
-                    <select onChange={handleExercicio} defaultValue={form.idExercicio}>
-                        {exercicio.map( ex => 
-                            <option value={ex.id}>{ex.nome}</option>
-                            )}
-                    </select>
-                </div>
+                
+                
 
                 <div class='label-float'>
                     <input 
@@ -215,6 +221,37 @@ console.log(turmas);
                         name='dtFim'
                     ></input>
                 </div>
+
+                {
+                    form.idTurma != '' ?
+                    <> 
+                    <div class='label-float'>
+                <label>Matéria:&nbsp;</label>
+                    <select onChange={handleMateria} defaultValue={form.idMateriaTurma}>
+                        <option value=''>Selecione um</option>
+                        {materia.map( m => 
+                            <option value={m.id}>{m.nome}</option>
+                            )}
+                    </select>
+                </div>
+
+                {
+                    form.idMateria !== ''? 
+                    <>
+                        <div class='label-float'>
+                            <label>Exercício:&nbsp;</label>
+                            <select onChange={handleExercicio} defaultValue={form.idExercicio}>
+                                {exercicio.map( ex => 
+                                <option value={ex.id}>{ex.desc}</option>
+                                )}
+                            </select>
+                        </div>
+                        <button type='button' className='btn-add-exercicio' >Adicionar Exercício</button>
+                    </>:null
+                }
+                
+                </>:null
+                }
 
                 <span className='span-erro'>{spanErro}</span>
                 
