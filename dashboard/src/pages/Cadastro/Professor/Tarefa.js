@@ -1,4 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useReducer } from 'react';
+
+import lixeira from '../../../Images/delete.svg';
+
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
 import '../Cadastro.css'
@@ -9,9 +12,10 @@ const initialState = () => {
         'idTurma': '',
         'titulo': '',
         'desc': '',
-        'pontos': '',
+        'pontos': 0,
         'dtComeco': '',
-        'dtFim': ''
+        'dtFim': '',
+        'exercicios': []
     }
 }
 
@@ -28,6 +32,11 @@ export const Tarefa = props =>{
     const [name, setName] = useState('');
     const [id, setId] = useState(0);
 
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
+
+    //ID contador na tabela de exercícios
+    let idExercicio = 0;
+
     const handleChange = (event) => {
         
         const { value, name } = event.target;
@@ -41,26 +50,36 @@ export const Tarefa = props =>{
     const onSubmit = (ev) => {
         ev.preventDefault();
 
-        form.idInstituicao = session.id;
+        form.idProfessor = session.id;
+
+        form.pontos = form.exercicios.reduce( (nota, add) => nota + Number(add.pontos), 0);
         console.log(form);
 
-        if(comparaSenha()){
-            api('/professor', 'POST', form)
-            .then( () => alert('Cadastro efetuado com sucesso!'))
-            .catch( err => {console.log(err); alert('Falha ao cadastrar!')});
-        }
+       
+        api('/tarefa', 'POST', form)
+        .then( () => alert('Cadastro efetuado com sucesso!'))
+        .catch( err => {console.log(err); alert('Falha ao cadastrar!')});
     } 
-
-    const comparaSenha = () => {
-        const igual = form.senha === form.confirmaSenha;
-        setSpanErro(igual ? '' : 'As senhas não são iguais!');
-
-        return igual;
-    }
     
       const handleChangeMateria = (e) =>{
        setId(e.value)
        setName(e.label)
+      }
+
+      const addExercicio = () => {
+          const id = form.idExercicio;
+
+          const ex = exercicio.find( e => e.id == id);
+
+          console.log(ex);
+
+          const f = form;
+
+          f.exercicios.push(ex);
+
+          setForm(f);
+
+          forceUpdate();
       }
 
       const getTurma = async () => {
@@ -93,7 +112,7 @@ console.log(turmas);
                 f.idExercicio = exercicios[0].id;
             }
             else{
-                f.idExcercicio = '';
+                f.idExercicio = '';
             }
 
             setForm(f);
@@ -114,7 +133,7 @@ console.log(turmas);
             setForm(
                 {
                     ...form,
-                    idExcercicio: e.target.value
+                    idExercicio: e.target.value
                 }
             );
         }
@@ -138,6 +157,7 @@ console.log(turmas);
         
       }, [form.idMateriaTurma]);
 
+
       const handleTurma = (e) => {
 
         setForm(
@@ -147,6 +167,17 @@ console.log(turmas);
             }
         );
         
+    }
+
+    const removerTarefa = (id) => {
+        const f = form;
+
+        f.exercicios.splice(id, 1);
+
+        setForm(f);
+
+        forceUpdate();
+        console.log(f);
     }
 
     return(
@@ -187,17 +218,6 @@ console.log(turmas);
                         name='desc'
                     ></textarea>
                     <label for='desc'></label>
-                </div>
-
-                <div class='label-float'>
-                    <input 
-                        type='number'
-                        placeholder='Pontuação *'
-                        onChange={handleChange}
-                        defaultValue={form.pontos}
-                        name='pontos'
-                    ></input>
-                    <label for='pontos'></label>
                 </div>
 
                 <div class='label-float'>
@@ -242,16 +262,64 @@ console.log(turmas);
                             <label>Exercício:&nbsp;</label>
                             <select onChange={handleExercicio} defaultValue={form.idExercicio}>
                                 {exercicio.map( ex => 
-                                <option value={ex.id}>{ex.desc}</option>
+                                <option value={ex.id}>{ex.titulo}</option>
                                 )}
                             </select>
                         </div>
-                        <button type='button' className='btn-add-exercicio' >Adicionar Exercício</button>
+                        <button type='button' className='btn-add-exercicio' onClick={addExercicio} >Adicionar Exercício</button>
                     </>:null
                 }
                 
                 </>:null
                 }
+
+                <div className='div-table'>
+                    <table className={props.className}>
+                        <thead>
+                            <tr>
+                                <th>Exercício</th>
+                                <th>Pontuação</th>
+                            </tr>
+                        </thead>
+            
+                        <tbody>
+                            {
+                                form.exercicios.length > 0 ? form.exercicios.map(
+                                    item => {
+
+                                        //encontrando a posição em array do item atual
+                                        const itemId = form.exercicios.findIndex( e => e.id == item.id);
+                                        return (
+                                        <tr key={item.id}>
+                                            <td>{item.titulo}</td>
+                                            <td>
+                                                <input 
+                                                    type="number" 
+                                                    className={'pontuacao'+item.id} 
+                                                    defaultValue={form.exercicios[itemId].pontos} 
+                                                    onChange={
+                                                        ev => {
+                                                            const f = form;
+
+                                                            f.exercicios[itemId].pontos = ev.target.value;
+
+                                                            setForm(f);
+
+                                                            console.log(f);
+                                                        }
+                                                    }
+                                                />
+
+                                                <img src={lixeira} alt="Deletar" className='img-lixeira' onClick={() => removerTarefa(itemId)} />
+                                            </td>
+                                        </tr>);
+                                    }
+                                ) : ''
+                            }
+                        </tbody>
+            
+                    </table>
+                </div>
 
                 <span className='span-erro'>{spanErro}</span>
                 
