@@ -53,13 +53,18 @@ export const Tarefa = props =>{
         form.idProfessor = session.id;
 
         form.pontos = form.exercicios.reduce( (nota, add) => nota + Number(add.pontos), 0);
-        console.log(form);
 
 
         const materiaTurma = materia.find( m => m.id == form.idMateriaTurma);
 
         form.idMateriaTurma = materiaTurma.materia_turma_id;
+
+        form.dtComeco = form.dtComeco.split('T').join(' ');
+
+        form.dtFim = form.dtFim.split('T').join(' ');
        
+        console.log(form);
+        
         api('/tarefa', 'POST', form)
         .then( () => alert('Cadastro efetuado com sucesso!'))
         .catch( err => {console.log(err); alert('Falha ao cadastrar!')});
@@ -75,9 +80,11 @@ export const Tarefa = props =>{
 
           const ex = exercicio.find( e => e.id == id);
 
-          console.log(ex);
-
           const f = form;
+
+          ex.numerador = f.exercicios.length + 1;
+
+          console.log(ex);
 
           f.exercicios.push(ex);
 
@@ -231,7 +238,7 @@ console.log(turmas);
                         placeholder='Data de ínicio *'
                         onChange={handleChange}
                         defaultValue={form.dtComeco}
-                        name='dfComeco'
+                        name='dtComeco'
                     ></input>
                 </div>
 
