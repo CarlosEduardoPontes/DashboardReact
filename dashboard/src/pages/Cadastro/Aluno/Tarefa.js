@@ -20,14 +20,24 @@ export const Tarefa = props =>{
     return(
         <main class='container'>
             <h1>Tarefas dos Alunos</h1>
-            {tarefas.map( t => (
-            <div className='div-tarefa'>    
-                <h2>{t.materia}</h2>
-                <h2>{t.titulo}</h2>
-                <h2>Pontos: {t.pontos}</h2>
-                <h2>Termina em: { t.dt_fim }</h2>
-            </div>
-            )
+            {tarefas.map( t => {
+                t.data = t.dt_fim.split(' ');
+
+                const dataSplit = t.data[0].split('-');
+
+                t.data[0] = dataSplit[2]+'/'+dataSplit[1]+'/'+dataSplit[0];
+                
+                return(
+                    <div key={t.id} className='div-tarefa'>
+                        <a href="#">    
+                            <h2>{t.materia}</h2>
+                            <h2>{t.titulo}</h2>
+                            <h2>Pontos: {t.pontos}</h2>
+                            <h2>Termina em: { t.data[0] } às { t.data[1] }</h2>
+                        </a>
+                    </div>
+                )
+            }
             )}
             
         </main>
