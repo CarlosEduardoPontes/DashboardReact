@@ -68,7 +68,7 @@ export const SideBarData = [
     },
     {
         title: 'Mensagens',
-        path: '/',
+        path: '/mensagens',
         icon: <AiIcons.AiFillMessage />,
     }
 ];
@@ -94,7 +94,7 @@ export const SideBarDataProfessor = [
             },
             {
                 title: 'Corrigir tarefas',
-                path: '/corrigir_tarefas',
+                path: '/corrigirtarefas',
                 icon: <IoIcons.IoIosPaper />, 
             }
         ]
@@ -177,7 +177,7 @@ export const SideBarDataAluno = [
     },
     {
         title: 'Mensagens',
-        path: '/',
+        path: '/mensagens',
         icon: <AiIcons.AiFillMessage />,
     }
 ]

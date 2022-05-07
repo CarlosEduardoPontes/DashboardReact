@@ -10,6 +10,7 @@ import { Professor } from '../../Cadastro/Professor/Professor';
 import { Instituicao } from '../../Cadastro/Instituicao/Instituicao'
 import { Materias } from '../../Cadastro/Materias/Materias';
 import { Turmas } from '../../Cadastro/Turma/Turmas';
+import { Mensagem } from '../../../components/Instituicao/Mensagem';
 
 import { InstituicaoAluno } from '../../../components/Instituicao/Aluno';
 import { InstituicaoMateria } from '../../../components/Instituicao/Materia';
@@ -31,7 +32,7 @@ const HomeInstituicao = () => {
         <Route path='/instituicao' exact component={Instituicao} />
         <Route path='/materias' exact component={Materias} />
         <Route path='/turmas' exact component={Turmas} />  
-
+        <Route path='/mensagens' exact component={Mensagem} />
         <Route path='/instituicao/alunos' exact component={InstituicaoAluno} />
         <Route path='/instituicao/materias' exact component={InstituicaoMateria} />
         <Route path='/instituicao/professores' exact component={InstituicaoProfessor} />
