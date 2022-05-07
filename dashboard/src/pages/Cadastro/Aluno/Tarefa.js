@@ -33,6 +33,7 @@ export const Tarefa = props =>{
                         <Link to= {"/tarefa/realizar/"+t.id}>
                             <h2>{t.materia}</h2>
                             <h2>{t.titulo}</h2>
+                            <h2>{t.desc}</h2>
                             <h2>Pontos: {t.pontos}</h2>
                             <h2>Termina em: { t.data[0] } às { t.data[1] }</h2>
                         </Link> 
