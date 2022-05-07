@@ -8,6 +8,8 @@ import {SideBar} from '../../../components/SideBar';
 import OverviewAluno from '../../../components/Instituicao/OverviewAluno'
 import { Tarefa } from '../../Cadastro/Aluno/Tarefa'
 import { ListarAlunoTarefa } from '../../../components/Aluno/ListarAlunoTarefa'
+import { Mensagem } from '../../../components/Aluno/Mensagem'
+import { Quiz } from '../../../components/Aluno/Quiz'
 
 function HomeAluno(){
 
@@ -18,7 +20,9 @@ function HomeAluno(){
         <Route path='/home/aluno' exact component={OverviewAluno} />
         <Route path='/overview' exact component={OverviewAluno} />  
         <Route path='/tarefas' exact component={Tarefa} />  
-        <Route path='/aluno/tarefas' exact component={ListarAlunoTarefa} />   
+        <Route path='/aluno/tarefas' exact component={ListarAlunoTarefa} />
+        <Route path='/mensagens' exact component={Mensagem} /> 
+        <Route path='/quiz' exact component={Quiz} />   
       </Switch>
     </Router>
   );

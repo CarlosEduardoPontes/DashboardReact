@@ -97,7 +97,7 @@ console.log(retorno);
           {error && (
             <div className="user-login__error">{error}</div>
           )}
-
+          <div className='esqueciSenha'>Esqueci a senha</div>
           <button type='submit' className='user-login__submit-button'>
           Entrar
           </button>

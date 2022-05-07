@@ -105,13 +105,18 @@
     border: none;
     color: white;
   }
-
+  .esqueciSenha{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
   footer{
     height: 80px;
     width: 100%;
     position: relative;
     align-items: center;
     text-align: center;
+    font-size: 13px;
     z-index: 999;
     margin-left: auto; /* linha modificada */
     margin-right: auto; /* linha adicionada */
