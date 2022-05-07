@@ -7,6 +7,7 @@ import StoreContext from '../../../components/store/Context';
 import {SideBar} from '../../../components/SideBar';
 import OverviewAluno from '../../../components/Instituicao/OverviewAluno'
 import { Tarefa } from '../../Cadastro/Aluno/Tarefa'
+import { ListarAlunoTarefa } from '../../../components/Aluno/ListarAlunoTarefa'
 
 function HomeAluno(){
 
@@ -16,7 +17,8 @@ function HomeAluno(){
       <Switch> 
         <Route path='/home/aluno' exact component={OverviewAluno} />
         <Route path='/overview' exact component={OverviewAluno} />  
-        <Route path='/tarefas' exact component={Tarefa} />    
+        <Route path='/tarefas' exact component={Tarefa} />  
+        <Route path='/aluno/tarefas' exact component={ListarAlunoTarefa} />   
       </Switch>
     </Router>
   );
