@@ -29,7 +29,7 @@ export const Tarefa = props =>{
                 
                 return(
                     <div key={t.id} className='div-tarefa'>
-                        <a href="#">    
+                        <a href= {"/tarefa/realizar/"+t.id}>    
                             <h2>{t.materia}</h2>
                             <h2>{t.titulo}</h2>
                             <h2>Pontos: {t.pontos}</h2>

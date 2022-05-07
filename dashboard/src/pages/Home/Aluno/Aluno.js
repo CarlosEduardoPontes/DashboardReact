@@ -10,6 +10,7 @@ import { Tarefa } from '../../Cadastro/Aluno/Tarefa'
 import { ListarAlunoTarefa } from '../../../components/Aluno/ListarAlunoTarefa'
 import { Mensagem } from '../../../components/Aluno/Mensagem'
 import { Quiz } from '../../../components/Aluno/Quiz'
+import { Tarefaa } from '../../Cadastro/Aluno/Tarefaa';
 
 function HomeAluno(){
 
@@ -19,7 +20,9 @@ function HomeAluno(){
       <Switch> 
         <Route path='/home/aluno' exact component={OverviewAluno} />
         <Route path='/overview' exact component={OverviewAluno} />  
-        <Route path='/tarefas' exact component={Tarefa} />  
+        <Route path='/tarefas' exact component={Tarefa} />
+        <Route path='/tarefa/realizar/:id' exact component={Tarefaa} />
+
         <Route path='/aluno/tarefas' exact component={ListarAlunoTarefa} />
         <Route path='/mensagens' exact component={Mensagem} /> 
         <Route path='/quiz' exact component={Quiz} />   
