@@ -1,4 +1,5 @@
 import react, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
 
@@ -29,12 +30,13 @@ export const Tarefa = props =>{
                 
                 return(
                     <div key={t.id} className='div-tarefa'>
-                        <a href= {"/tarefa/realizar/"+t.id}>    
+                        <Link to= {"/tarefa/realizar/"+t.id }>    
                             <h2>{t.materia}</h2>
                             <h2>{t.titulo}</h2>
+                            <h2>{t.desc}</h2>
                             <h2>Pontos: {t.pontos}</h2>
                             <h2>Termina em: { t.data[0] } às { t.data[1] }</h2>
-                        </a>
+                        </Link>
                     </div>
                 )
             }
