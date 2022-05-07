@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import StoreContext from '../../../components/store/Context';
 import {SideBar} from '../../../components/SideBar';
 import OverviewAluno from '../../../components/Instituicao/OverviewAluno'
-
+import { Tarefa } from '../../Cadastro/Aluno/Tarefa'
 
 function HomeAluno(){
 
@@ -15,7 +15,8 @@ function HomeAluno(){
       <SideBar tipo='aluno' />      
       <Switch> 
         <Route path='/home/aluno' exact component={OverviewAluno} />
-        <Route path='overview' exact component={OverviewAluno} />      
+        <Route path='/overview' exact component={OverviewAluno} />  
+        <Route path='/tarefas' exact component={Tarefa} />    
       </Switch>
     </Router>
   );
