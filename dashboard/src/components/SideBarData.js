@@ -135,7 +135,7 @@ export const SideBarDataProfessor = [
     },
     {
         title: 'Mensagens',
-        path: '/',
+        path: '/mensagem',
         icon: <AiIcons.AiFillMessage />,
     }
 ];

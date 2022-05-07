@@ -4,19 +4,22 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import StoreContext from '../../../components/store/Context';
 import {SideBar} from '../../../components/SideBar'
 import '../Home.css';
+
 import { Alunos } from '../../Cadastro/Aluno/Alunos';
 import { Professor } from '../../Cadastro/Professor/Professor';
 import { Instituicao } from '../../Cadastro/Instituicao/Instituicao'
 import { Materias } from '../../Cadastro/Materias/Materias';
 import { Turmas } from '../../Cadastro/Turma/Turmas';
-
 import { Exercicio } from '../../Cadastro/Professor/Exercicio';
 import { Tarefa } from '../../Cadastro/Professor/Tarefa';
+import { Mensagem } from '../../../components/Professor/Mensagens';
 
 import { ProfAluno } from '../../../components/Professor/Aluno';
 import { ProfessorMateria } from '../../../components/Professor/Materia';
 import { ProfessorTurma } from '../../../components/Professor/Turma';
 import { InstituicaoProfessor } from '../../../components/Instituicao/Professor';
+import { ListarTarefa } from '../../../components/Professor/ListarTarefas'
+import { ListarExercicios } from '../../../components/Professor/ListarExcercicios'
 import OverviewProf from '../../../components/Instituicao/OverviewProf';
 
 export const HomeProfessor = () => {
@@ -38,7 +41,10 @@ export const HomeProfessor = () => {
         <Route path='/professor/alunos' exact component={ProfAluno} /> 
         <Route path='/professor/materias' exact component={ProfessorMateria} />
         <Route path='/instituicao/professor' exact component={InstituicaoProfessor} />
-        <Route path='/professor/turmas' exact component={ProfessorTurma} />   
+        <Route path='/professor/turmas' exact component={ProfessorTurma} /> 
+        <Route path='/professor/tarefas' exact component={ListarTarefa} />  
+        <Route path='/professor/exercicios' exact component={ListarExercicios} />
+        <Route path='/mensagem' exact component={Mensagem} />
       </Switch>
     </Router>
   )
