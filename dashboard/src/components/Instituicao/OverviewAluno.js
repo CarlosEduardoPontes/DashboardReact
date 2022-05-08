@@ -6,22 +6,14 @@ export default () => {
         <aside>
             <div class="grid">
             
-            <div class="grid__item">
-                <h1>História</h1>
-                <p>Tarefas de História</p>
-            </div>
-            <div class="grid__item">
-                <h1>Portugues</h1>
-                <p>Tarefas de Portugues</p>
-            </div>
-            <div class="grid__item">
-                <h1>Matemática</h1>
-                <p>Tarefas de Matemática</p>
-            </div>
-            <div class="grid__item">
-                <h1>Física</h1>
-                <p>Tarefas de Física</p>
-            </div>
+            <div class="grid__item-historia">História</div>
+
+            <div class="grid__item-port"></div>
+
+            <div class="grid__item-math">Matemática</div>
+
+            <div class="grid__item-fisica">Física</div>
+
             <div class="grid__item">
                 <h1>Biologia</h1>
                 <p>Tarefas de Física</p>

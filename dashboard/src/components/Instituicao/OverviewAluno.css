@@ -1,21 +1,57 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 10px;
     grid-template-rows: 200px 200px;
     grid-gap: 6.5em;
-    margin: 6px;
-    padding: 30px;
+    margin: 10px;
+    padding: 10px;
   }
    
   .grid__item {
     width: 100%;
     height: 200px;
     background: rgb(235, 240, 243);
-    padding: 20px;
     text-align: center;
     height: 250px;
   }
+  .grid__item-historia{
+    width: 100%;
+    height: 250px;
+    border: 4px solid #387AE9;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding: 80px;
+    background-image: url("../../Images/historia.jpeg");
+  }
+  .grid__item-port {
+    width: 100%;
+    height: 250px;
+    border: 4px solid #387AE9;
+    text-align: center;
+    background-image: url("../../Images/portugues.jpg");
+  }
+  .grid__item-math {
+    width: 100%;
+    height: 250px;
+    border: 4px solid #387AE9;
+    text-align: center;
+    color: rgb(247, 102, 102);
+    font-size: 20px;
+    padding: 90px;
+    background-image: url("../../Images/mat.jpg");
+  }
+  .grid__item-fisica{
+    width: 100%;
+    height: 250px;
+    border: 4px solid #387AE9;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding: 30px;
+    background-image: url("../../Images/fisica.jpg");
+  }
+  
   p{
       color: #007CFF
   }
