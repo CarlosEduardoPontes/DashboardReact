@@ -7,19 +7,28 @@ import '../../Cadastro/Aluno/Tarefaa.scss'
 export const Tarefaa = props =>{
 
     const [tarefa, setTarefa] = useState([]);
+    const [questao, setQuestao] = useState(0);
     const { session } = useContext(StoreContext);
     const {id} = useParams();
+
+    const nextExercicio = () => {
+        setQuestao( questao + 1);
+    };
+
+    const previousExercicio = () => {
+        setQuestao( questao - 1);
+    };
 
     useEffect(() => {
         const getTarefas = async () => {
 
             
             console.log(id);
-            /*const tarefas = await api('/tarefa/aluno/'+session.id+'/get_atuais');
+            const tarefa = await api('/tarefa/get/'+id);
 
-            console.log(tarefas);
+            console.log(tarefa);
 
-            setTarefas(tarefas); */
+            setTarefa(tarefa); 
         };
 
         getTarefas();
@@ -27,27 +36,29 @@ export const Tarefaa = props =>{
 
     return(
         <main>
-            <h1> Qual a cor do cavalo Branco de Napoleão? </h1>
-                <div class="container">
+            <h1>{ tarefa.exercicios ? tarefa.exercicios[questao].desc:'Carregando'}</h1>
+            <div class="container">
                 <form>
-                    <label>
-                        <input type="radio" name="radio" checked/>
-                        <span>Rosa</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="radio"/>
-                        <span>Preto</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="radio"/>
-                        <span>Verde</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="radio"/>
-                        <span>Braco</span>
-                    </label>
+                {
+                    tarefa.exercicios ? tarefa.exercicios[questao].exerciciosAlternativa.map(
+                        alt => (
+                        <label key={alt.id}>
+                        <input type="radio" name="radio" />
+                        <span>{alt.resposta}</span>
+                        </label>
+                    )
+                    ) : null
+                }
+                    <div className='div-buttons'>
+                    {questao > 0 ? <button onClick={previousExercicio} type='button'>Anterior</button> : null}
+                    {
+                        questao < tarefa.exercicios.length -1 ?
+                        <button onClick={nextExercicio} type='button'>Próximo</button>:
+                        <button type='button'>Finalizar</button>
+                    }
+                    </div>
 	            </form>
-                </div>
+            </div>
         </main>
     )
 }
