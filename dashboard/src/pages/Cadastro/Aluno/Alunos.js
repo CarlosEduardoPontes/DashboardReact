@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import StoreContext from '../../../../src/components/store/Context'
 import api from '../../../utils/api'
 import '../Cadastro.css'
+import '../../Cadastro/Aluno/CadastroAluno.css'
 
 const initialState = () => {
     return {
@@ -136,7 +137,7 @@ export const Alunos = props =>{
                 <span className='span-erro'>{spanErro}</span>
                 
                 <div>
-                    <button>Cadastrar</button>
+                    <button className='botao-cadastrar'>Cadastrar</button>
                 </div>
 
             </form>
