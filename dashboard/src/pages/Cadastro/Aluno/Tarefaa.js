@@ -2,6 +2,7 @@ import react, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
+import '../../Cadastro/Aluno/Tarefaa.scss'
 
 export const Tarefaa = props =>{
 
@@ -25,9 +26,28 @@ export const Tarefaa = props =>{
     }, []);
 
     return(
-        <main class='container'>
-            <h1>Tarefa</h1>
-            
+        <main>
+            <h1> Qual a cor do cavalo Branco de Napoleão? </h1>
+                <div class="container">
+                <form>
+                    <label>
+                        <input type="radio" name="radio" checked/>
+                        <span>Rosa</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="radio"/>
+                        <span>Preto</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="radio"/>
+                        <span>Verde</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="radio"/>
+                        <span>Braco</span>
+                    </label>
+	            </form>
+                </div>
         </main>
     )
 }
