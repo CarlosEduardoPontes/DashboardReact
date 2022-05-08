@@ -37,14 +37,14 @@ export const Tarefaa = props =>{
     return(
         <main>
             <h1>{ tarefa.exercicios ? tarefa.exercicios[questao].desc:'Carregando'}</h1>
-            <div class="container">
-                <form>
+            <div class="container-respostas">
+                <form class="form-respostas">
                 {
                     tarefa.exercicios ? tarefa.exercicios[questao].exerciciosAlternativa.map(
                         alt => (
-                        <label key={alt.id}>
-                        <input type="radio" name="radio" />
-                        <span>{alt.resposta}</span>
+                        <label class="label-respostas" key={alt.id}>
+                        <input class="input-respostas" type="radio" name="radio" />
+                        <span class="span-respostas">{alt.resposta}</span>
                         </label>
                     )
                     ) : null
