@@ -52,9 +52,10 @@ export const Tarefaa = props =>{
                     <div className='div-buttons'>
                     {questao > 0 ? <button onClick={previousExercicio} type='button'>Anterior</button> : null}
                     {
-                        questao < tarefa.exercicios.length -1 ?
+                        tarefa.exercicios ? questao < tarefa.exercicios.length -1 ?
                         <button onClick={nextExercicio} type='button'>Próximo</button>:
                         <button type='button'>Finalizar</button>
+                        :null
                     }
                     </div>
 	            </form>
