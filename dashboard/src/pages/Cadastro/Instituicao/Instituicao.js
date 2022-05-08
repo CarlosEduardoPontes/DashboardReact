@@ -136,7 +136,7 @@ const Instituicao = props =>{
                 <span className='span-erro'>{spanErro}</span>
 
                 <div>
-                    <button>Cadastrar</button>
+                    <button className='botao-cadastrar'>Cadastrar</button>
                 </div>
 
             </form>

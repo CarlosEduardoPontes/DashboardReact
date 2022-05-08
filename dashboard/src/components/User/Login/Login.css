@@ -52,12 +52,7 @@
     outline: 0;
     border-color: #f8f9fa;
   }
-  
-  .user-login__submit-button {
-    width: 100%;
-    margin-top: 30px;
-  }
-  
+   
   .user-login__error {
     color: red;
   }
@@ -89,19 +84,21 @@
   .user-login__submit-button{
     border-radius: 10px;
     border: none;
-    background-color: gray;
+    background-color: rgb(151, 144, 144);
     font-size: 20px;
-    transition-duration: 0.5s;
+    transition: .5s;
     width: 100%;
     float: center;
-    
-    box-shadow: 0px 0px 2px 2px rgba(133, 130, 130, 0.20), 0px 0px 2px 2px rgb(133, 130, 130,0.20);
-    
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-top: 40px;
   }
   .user-login__submit-button:hover{
     background-color: #624CD3;
     cursor:pointer;
-    box-shadow: 0px 0px 12px 2px rgba(250, 250, 250, 0.19), 0px 0px 12px 2px rgba(252, 252, 252, 0.19);
+    box-shadow: 0px 0px 12px 14px rgba(250, 250, 250, 0.22), 0px 0px 12px 14px rgba(252, 252, 252, 0.22);    
     border: none;
     color: white;
   }

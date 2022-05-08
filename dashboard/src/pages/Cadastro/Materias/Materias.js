@@ -51,7 +51,7 @@ export const Materias = props =>{
                 </div>
                                 
                 <div>
-                    <button>Cadastrar</button>
+                    <button className='botao-cadastrar'>Cadastrar</button>
                 </div>
 
             </form>

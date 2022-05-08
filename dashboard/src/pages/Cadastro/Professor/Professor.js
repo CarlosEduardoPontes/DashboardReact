@@ -59,7 +59,7 @@ export const Professor = props =>{
                 <div class='label-float'>
                     <input 
                         type='text'
-                        placeholder='Nome *'
+                        placeholder='Nome Completo*'
                         onChange={handleChange}
                         defaultValue={form.nome}
                         name='nome'    
@@ -92,7 +92,7 @@ export const Professor = props =>{
                 <div class='label-float'>
                     <input 
                         type='email'
-                        placeholder='Email *'
+                        placeholder='E-mail *'
                         onChange={handleChange}
                         defaultValue={form.email}
                         name='email'
@@ -125,7 +125,7 @@ export const Professor = props =>{
                 <span className='span-erro'>{spanErro}</span>
                 
                 <div>
-                    <button>Cadastrar</button>
+                    <button className='botao-cadastrar'>Cadastrar</button>
                 </div>
 
             </form>

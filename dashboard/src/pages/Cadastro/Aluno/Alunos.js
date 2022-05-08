@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import StoreContext from '../../../../src/components/store/Context'
 import api from '../../../utils/api'
 import '../Cadastro.css'
-import '../../Cadastro/Aluno/CadastroAluno.css'
+
 
 const initialState = () => {
     return {
@@ -60,7 +60,7 @@ export const Alunos = props =>{
                 <div class='label-float'>
                     <input 
                         type='text' 
-                        placeholder='Nome *'
+                        placeholder='Nome Completo*'
                         onChange={handleChange}
                         defaultValue={form.nome}
                         name='nome'
@@ -71,7 +71,7 @@ export const Alunos = props =>{
                 <div class='label-float'>
                     <input 
                         type='number' 
-                        placeholder='Identificação *'
+                        placeholder='Número do RA*'
                         onChange={handleChange}
                         defaultValue={form.identidade}
                         name='identidade'
@@ -104,7 +104,7 @@ export const Alunos = props =>{
                 <div class='label-float'>
                     <input 
                         type='email'
-                        placeholder='Email *'
+                        placeholder='E-mail *'
                         onChange={handleChange}
                         defaultValue={form.email}
                         name='email'

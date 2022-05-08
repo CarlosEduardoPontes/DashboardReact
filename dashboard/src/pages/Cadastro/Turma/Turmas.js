@@ -176,7 +176,7 @@ const Turmas = props =>{
                     <div class='label-float'>
                         <input 
                             type='text' 
-                            placeholder='Nome *'
+                            placeholder='Nome da Turma*'
                             onChange={handleChange}
                             defaultValue={form.nome}
                             name='nome'
@@ -238,7 +238,7 @@ const Turmas = props =>{
                             type='text' 
                             autoComplete='off' 
                             className='datalist-alunos' 
-                            placeholder="Digite o nome do aluno" 
+                            placeholder="Digite o nome do aluno *" 
                             list='alunos' 
                             onChange={handleAlunoDL}
                         />
@@ -284,7 +284,7 @@ const Turmas = props =>{
                 </div>
                 
                 <div>
-                    <button>Cadastrar</button>
+                    <button className='botao-cadastrar'>Cadastrar</button>
                 </div>
 
             </form>

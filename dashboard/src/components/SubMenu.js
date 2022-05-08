@@ -23,7 +23,7 @@ const SideBarLink = styled(Link)`
 `
 const SideBarLabel = styled.span`
     margin-left: 50px;
-    
+    text-decoration: none;
 `
 const DropDownLink = styled(Link)`
     background: #414757;

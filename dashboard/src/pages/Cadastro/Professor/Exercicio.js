@@ -163,8 +163,8 @@ console.log(materias);
           return(
             <>
                 <div>
-                    <button type='button' className='btn-add-alternativa' onClick={addAlternativa}>Adicionar Alternativas</button>
-                    <button type='button' className='btn-remove-alternativa' onClick={removeAlternativa}>Remover Alternativas</button>
+                    <button type='button' className='btn-add-alternativa' onClick={addAlternativa}>Adicionar</button>
+                    <button type='button' className='btn-remove-alternativa' onClick={removeAlternativa}>Remover</button>
                 </div><br></br>
 
                 <div>
@@ -243,7 +243,7 @@ console.log(materias);
                 <span className='span-erro'>{spanErro}</span>
                 
                 <div>
-                    <button>Cadastrar</button>
+                    <button className='botao-cadastrar'>Cadastrar</button>
                 </div>
 
             </form>

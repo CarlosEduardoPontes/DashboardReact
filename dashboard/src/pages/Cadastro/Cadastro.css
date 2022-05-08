@@ -1,33 +1,47 @@
 
 .card{
     background-color: rgba(255, 255, 255, 0.999);
-    padding: 20px;
+    padding: 15px;
     padding-left: 200px;
     border-radius: 0;
     box-shadow: 2px 2px 1px 0px;
-    height: 650px;
+    height: 720px;
     margin: 5px;
     font-size: 25px;
 }
 h3{
-    
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.999);
-    padding:9px;
-    margin: 9px;
-    margin-top: 19px;
+    background-color: rgba(25, 39, 235, 0.999);
+    padding:8px;
+    margin: 5px;
+    margin-bottom: 15px;
+}
+textarea{
+    width: 100%;
+    
 }
 
 input{
     border: unset;
     border-bottom: 0.5px solid rgb(189, 186, 185);
     background-color: rgba(255, 255, 255, 0.972);
-    width: 70%;
-    height: 30px;
+    width: 85%;
+    height: 32px;
     margin: 2px;
+    text-decoration: none;
 }
 .label-float{
     background-color: rgba(255, 255, 255, 0.849);
+    margin: 5px;
+    font-size: 16px;  
+}
+.label-float:hover{
+    color: #2b28e2;
+
 }
 
 .span-erro{
@@ -58,25 +72,86 @@ input{
 .btn-remove-alternativa{
     background-color: red;
     color: white;
-    border-radius: 10px;
-    font-size: 20px;
-    height: 50px;
+    border-radius: 6px;
+    font-size: 17px;
+    height: 35px;
     margin: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 .btn-remove-alternativa:hover{
-    background-color: rgb(218, 18, 18);
-    font-weight: bold;
+    background: red;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #d13e3e,
+                0 0 25px #d13e3e,
+                0 0 50px #d13e3e,
+                0 0 100px #d13e3e;
 }
 .btn-add-alternativa{
-    background-color: blue;
+    background-color: #2b28e2;
     color: white;
-    border-radius: 10px;
-    font-size: 20px;
-    height: 50px;
+    border-radius: 6px;
+    font-size: 17px;
+    height: 35px;
     margin: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 .btn-add-alternativa:hover{
-    background-color: rgb(17, 17, 160);
-    font-weight: bold;
+    background: #2b28e2;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #3e4cd1,
+                0 0 25px #3e4cd1,
+                0 0 50px #3e4cd1,
+                0 0 100px #3e4cd1;
     
 }
+.btn-add-exercicio{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #012a2c;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .7s;
+    letter-spacing: 2px
+    
+}
+.btn-add-exercicio:hover{
+    background: #2b28e2;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #3e4cd1,
+                0 0 25px #3e4cd1,
+                0 0 50px #3e4cd1,
+                0 0 100px #3e4cd1;
+}
+
+
+.botao-cadastrar {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #012a2c;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .botao-cadastrar:hover {
+    background: #2b28e2;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #3e4cd1,
+                0 0 25px #3e4cd1,
+                0 0 50px #3e4cd1,
+                0 0 100px #3e4cd1;
+  }
