@@ -2,7 +2,7 @@ import react, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
-import '../../Cadastro/Aluno/Tarefa.css';
+import '../../Cadastro/Aluno/Tarefa.scss';
 
 export const Tarefa = props =>{
 
@@ -32,11 +32,24 @@ export const Tarefa = props =>{
                 return(
                     <div key={t.id} className='div-tarefa'>
                         <Link to= {"/tarefa/realizar/"+t.id}>
-                            <h2 className='termina'>Matéria: </h2><h2 className='termina-2'>{t.materia}</h2><br></br>
-                            <h2 className='termina'>Titulo: </h2><h2 className='termina-2'>{t.titulo}</h2><br></br>
-                            <h2 className='termina'>Descrição da Tarefa: </h2><h2 className='termina-2'>{t.desc}</h2><br></br>
-                            <h2 className='termina'>Pontos: </h2><h2 className='termina-2'>{t.pontos}</h2><br></br>
-                            <h2 className='termina'>Termina em: </h2><h2 className='termina-2'>{t.data[0] } às { t.data[1] }</h2><br></br>
+                        <main className='tarefa'>
+                            <table class="rwd-table">
+                                <tr>
+                                    <th>Matéria:</th>
+                                    <th>Titulo:</th>
+                                    <th>Descrição da Tarefa:</th>
+                                    <th>Pontos:</th>
+                                    <th>Termina em:</th>
+                                </tr>
+                                <tr>
+                                    <td data-th="Materia">{t.materia}</td>
+                                    <td data-th="Titulo">{t.titulo}</td>
+                                    <td data-th="Desc-trarefa">{t.desc}</td>
+                                    <td data-th="Pontos">{t.pontos}</td>
+                                    <td data-th="Termino">{t.data[0] } às { t.data[1] }</td>
+                                </tr>
+                            </table>
+                        </main>
                         </Link> 
                     </div>
                 )
