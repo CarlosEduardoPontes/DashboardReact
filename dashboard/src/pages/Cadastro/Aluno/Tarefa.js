@@ -10,11 +10,15 @@ export const Tarefa = props =>{
     const { session } = useContext(StoreContext);
     useEffect(() => {
         const getTarefas = async () => {
-            const tarefas = await api('/tarefa/aluno/'+session.id+'/get_atuais');
+            const tarefa = await api('/tarefa/aluno/'+session.id+'/get_atuais');
+
+            console.log(tarefa);
+
+
+            setTarefas(tarefa);
 
             console.log(tarefas);
 
-            setTarefas(tarefas);
         };
 
         getTarefas();

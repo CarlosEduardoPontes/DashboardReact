@@ -1,5 +1,6 @@
 import react, { useContext, useEffect, useState, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
 import '../../Cadastro/Aluno/Tarefaa.scss'
@@ -14,8 +15,10 @@ export const Tarefaa = props =>{
     const { session } = useContext(StoreContext);
     const {id} = useParams();
     const date = new Date();
-    const dtInicio = date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate
+    const dtInicio = date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate()
         + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+
+    const history = useHistory();
 
     const nextExercicio = () => {
         setQuestao( questao + 1);
@@ -25,7 +28,7 @@ export const Tarefaa = props =>{
         setQuestao( questao - 1);
     };
 
-    useEffect(() => {
+    useEffect( () => {
         const getTarefas = async () => {
 
             
@@ -44,6 +47,9 @@ export const Tarefaa = props =>{
             }
 
             setRespostas(r);
+
+            console.log(r);
+            console.log(respostas);
         };
 
         getTarefas();
@@ -68,14 +74,34 @@ export const Tarefaa = props =>{
         console.log(respostas);
     }
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
 
         const tarefaRealizada = {
             id: id,
             dtInicio: dtInicio,
-            dtSubmissao: date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate
-            + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+            dtSubmissao: date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate()
+            + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds(),
+            idAluno: session.id,
+            exercicios: []
         };
+
+        for (let i = 0; i < respostas.length; i++) {
+            tarefaRealizada.exercicios.push(
+                {
+                    resposta: respostas[i],
+                    id: tarefa.exercicios[i].id
+                }
+            );
+        }
+
+        console.log(tarefaRealizada);
+
+        const r = await api('/tarefa/submissao', 'POST', tarefaRealizada)
+        .catch( err => {console.log(err); alert('Falha ao cadastrar!')});
+
+        if(r){
+            history.push('/tarefas');
+        }
     };
 
     return(
@@ -115,7 +141,7 @@ export const Tarefaa = props =>{
                     {
                         tarefa.exercicios ? questao < tarefa.exercicios.length -1 ?
                         <button onClick={nextExercicio} type='button'>Próximo</button>:
-                        <button type='button'>Finalizar</button>
+                        <button onClick={onSubmit} type='button'>Finalizar</button>
                         :null
                     }
                     </div>
