@@ -106,7 +106,7 @@ export const Tarefaa = props =>{
 
     return(
         <main>
-            <h1>{ tarefa.exercicios ? tarefa.exercicios[questao].desc:'Carregando'}</h1>
+            <h1 className='titulo-tarefa'>{ tarefa.exercicios ? tarefa.exercicios[questao].desc:'Carregando'}</h1>
             <div class="container-respostas">
                 <form class="form-respostas">
                 {
@@ -137,11 +137,16 @@ export const Tarefaa = props =>{
                     :null
                 }
                     <div className='div-buttons'>
-                    {questao > 0 ? <button onClick={previousExercicio} type='button'>Anterior</button> : null}
+                    {questao > 0 ? <button className='btn-anterior' onClick={previousExercicio} type='button'> Anterior</button> : null}
                     {
                         tarefa.exercicios ? questao < tarefa.exercicios.length -1 ?
+<<<<<<< HEAD
                         <button onClick={nextExercicio} type='button'>Próximo</button>:
                         <button onClick={onSubmit} type='button'>Finalizar</button>
+=======
+                        <button className='btn-proximo' onClick={nextExercicio} type='button'>Próximo ></button>:
+                        <button className='btn-finalizar' type='button' >Finalizar</button>
+>>>>>>> ec7210aecd48eb0a36c3679fc663a9ab9e32cacd
                         :null
                     }
                     </div>
