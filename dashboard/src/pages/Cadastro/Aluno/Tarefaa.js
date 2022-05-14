@@ -1,4 +1,4 @@
-import react, { useContext, useEffect, useState } from 'react';
+import react, { useContext, useEffect, useState, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import StoreContext from '../../../components/store/Context';
 import api from '../../../utils/api';
@@ -6,10 +6,16 @@ import '../../Cadastro/Aluno/Tarefaa.scss'
 
 export const Tarefaa = props =>{
 
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
+
+    const [respostas, setRespostas] = useState([]);
     const [tarefa, setTarefa] = useState([]);
     const [questao, setQuestao] = useState(0);
     const { session } = useContext(StoreContext);
     const {id} = useParams();
+    const date = new Date();
+    const dtInicio = date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate
+        + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 
     const nextExercicio = () => {
         setQuestao( questao + 1);
@@ -28,11 +34,49 @@ export const Tarefaa = props =>{
 
             console.log(tarefa);
 
-            setTarefa(tarefa); 
+            setTarefa(tarefa);
+
+            const r = [];
+
+            for (const ex of tarefa.exercicios) {
+                r.push('');
+                
+            }
+
+            setRespostas(r);
         };
 
         getTarefas();
     }, []);
+
+    const handleAlternativa = (event) =>{
+        const r = respostas;
+        r[questao] = event.target.value;
+
+        setRespostas(r);
+
+        console.log(respostas);
+        forceUpdate();
+    }
+
+    const handleDissertativa = (event) => {
+        const r = respostas;
+        r[questao] = event.target.value;
+
+        setRespostas(r);
+
+        console.log(respostas);
+    }
+
+    const onSubmit = () => {
+
+        const tarefaRealizada = {
+            id: id,
+            dtInicio: dtInicio,
+            dtSubmissao: date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate
+            + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+        };
+    };
 
     return(
         <main>
@@ -40,14 +84,31 @@ export const Tarefaa = props =>{
             <div class="container-respostas">
                 <form class="form-respostas">
                 {
-                    tarefa.exercicios ? tarefa.exercicios[questao].exerciciosAlternativa.map(
-                        alt => (
-                        <label class="label-respostas" key={alt.id}>
-                        <input class="input-respostas" type="radio" name="radio" />
-                        <span class="span-respostas">{alt.resposta}</span>
-                        </label>
-                    )
-                    ) : null
+                    tarefa.exercicios ? 
+                    tarefa.exercicios[questao].categoria === 'ALTERNATIVA' ?
+                        tarefa.exercicios[questao].exerciciosAlternativa.map(
+                            alt => (
+                                <label class="label-respostas" key={alt.id}>
+                                    <input 
+                                        class="input-respostas" 
+                                        type="radio" 
+                                        value={alt.numerador} 
+                                        name="alternativa" 
+                                        onChange={handleAlternativa}
+                                        checked={respostas[questao] == alt.numerador}
+                                    />
+                                    <span class="span-respostas">{alt.resposta}</span>
+                                </label>
+                            )
+                        ):
+                            <div class="div-resposta" >
+                                <textarea 
+                                    class="text-resposta"
+                                    defaultValue={respostas[questao]}
+                                    onChange={handleDissertativa}  
+                                ></textarea>
+                            </div>
+                    :null
                 }
                     <div className='div-buttons'>
                     {questao > 0 ? <button onClick={previousExercicio} type='button'>Anterior</button> : null}
