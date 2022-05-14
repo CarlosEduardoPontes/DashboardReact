@@ -7,6 +7,11 @@
 $primary-color: #00005c; // Change color here. C'mon, try it! 
 $text-color: mix(#000, $primary-color, 64%);
 
+.titulo-tarefa{
+	color: #000;
+	margin-top: 20px;
+	padding: 10px;
+}
 
 .form-respostas {
 	display: flex;
@@ -16,6 +21,7 @@ $text-color: mix(#000, $primary-color, 64%);
 	color: $text-color;
 	font-size: calc(1em + 1.25vw);
 	background-color: mix(#fff, $primary-color, 90%);
+	margin-top: 380px;
 }
 
 .label-respostas {
@@ -35,6 +41,7 @@ $text-color: mix(#000, $primary-color, 64%);
 	.input-respostas{
 		position: absolute;
 		left: -9999px;
+		
 		&:checked + span {
 			background-color: mix(#fff, $primary-color, 84%);
 			&:before {
@@ -48,6 +55,7 @@ $text-color: mix(#000, $primary-color, 64%);
 		padding: 0.375em 0.75em 0.375em 0.375em;
 		border-radius: 99em; // or something higher...
 		transition: 0.25s ease;
+		
 		&:hover {
 			background-color: mix(#fff, $primary-color, 84%);
 		}
@@ -77,6 +85,120 @@ $text-color: mix(#000, $primary-color, 64%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
+	padding: 40px;
+	
 }
-// End Codepen spesific styling
+.div-resposta{
+	position: relative;
+	display: flex;
+	padding: 10px;
+	align-items: center;
+	background-color: white;
+	
+}
+.text-resposta{
+	width: 800px;
+}
+
+
+//---------------------Botoes
+
+.btn-proximo{
+	background-color: #4a4d5a;
+	color: white;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding: 10px;
+	margin: 12px;
+	border-radius: 4px;
+	border: 0;
+	font-family: 'Raleway', sans-serif;
+	transition: .6s;
+	overflow: hidden;
+  	&:focus{
+    	outline: 0;}
+}
+
+.btn-proximo:hover{
+	background-color: #2f2f31;
+
+}
+.btn-anterior{
+	background-color: #4a4d5a;
+	color: white;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding: 10px;
+	margin: 12px;
+	border-radius: 4px;
+	border: 0;
+	font-family: 'Raleway', sans-serif;
+	transition: .6s;
+	overflow: hidden;
+  	&:focus{
+    	outline: 0;}
+	
+}
+.btn-anterior:hover{
+	background-color: #2f2f31;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+.btn-finalizar{
+  background: #4a4d5a;
+  color: #ccc;
+  width: 200px;
+  height: 50px;
+  border: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px;
+  margin: 12px;
+  font-size: 18px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  transition: .6s;
+  overflow: hidden;
+  float: right;
+  &:focus{
+    outline: 0;
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,0.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .7;
+    filter: blur(30px);
+    transform: translateX(-100px)  skewX(-15deg);
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:hover{
+    background: #624CD3;
+    cursor: pointer;
+	opacity: 0.7;
+	transition: .7s;
+  }
+}
+
+
+//------------------------------------------------------------
