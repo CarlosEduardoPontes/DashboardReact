@@ -140,13 +140,9 @@ export const Tarefaa = props =>{
                     {questao > 0 ? <button className='btn-anterior' onClick={previousExercicio} type='button'> Anterior</button> : null}
                     {
                         tarefa.exercicios ? questao < tarefa.exercicios.length -1 ?
-<<<<<<< HEAD
-                        <button onClick={nextExercicio} type='button'>Próximo</button>:
-                        <button onClick={onSubmit} type='button'>Finalizar</button>
-=======
-                        <button className='btn-proximo' onClick={nextExercicio} type='button'>Próximo ></button>:
-                        <button className='btn-finalizar' type='button' >Finalizar</button>
->>>>>>> ec7210aecd48eb0a36c3679fc663a9ab9e32cacd
+
+                        <button className='btn-proximo' onClick={nextExercicio} type='button'>Próximo</button>:
+                        <button className='btn-finalizar' onClick={onSubmit} type='button' >Finalizar</button>
                         :null
                     }
                     </div>
