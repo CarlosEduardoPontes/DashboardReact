@@ -40,7 +40,8 @@
 
 }
 .app-hub-span{
-    
+    display: block;
+    width: 100%;
 }
 .app-hub-btn{
     border-top: 1px solid rgb(184, 184, 238);
