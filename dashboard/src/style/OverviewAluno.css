@@ -1,0 +1,61 @@
+.container{
+  
+}
+.grid-area-aluno{
+  font-size: 15px;
+  color:blue;;
+}
+.grid-area-aluno{
+  background-color: rgb(235, 240, 243);
+  box-shadow: 1px 1px 2px rgb(71, 70, 70);
+    margin-bottom: 0px;
+    margin: 10px;
+    border-radius: 2px;
+    flex: 1 1 0%;
+    padding: 20px 12px 12px;
+    border-radius: 10px;
+}
+.grid {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-gap: 6.5em;
+    margin: 10px;
+    padding: 10px;
+  }
+   
+  .grid__item {
+    box-shadow: 1px 1px 2px rgb(71, 70, 70);
+    margin: 12pxpx;
+    background: rgb(235, 240, 243);
+    text-align: center;
+    height: 210px;
+    border-radius: 3px;
+  }  
+  .grid__item__titulo{
+    color: blue;
+    font-size: 16px;
+  }
+  .grid__item__texto{
+    
+    height: 100px;
+    /* /* margin: 5px; */
+    padding: 5px;
+  }
+  .grid__item__subtexto{
+    border-top: 1px solid rgb(184, 184, 238);
+    box-sizing: border-box;
+    padding-top: 25px;
+    width: 100%;
+  }
+  .app-hub-button{
+    width: 100%;
+    height: 15px;
+    border: 2px solid #B8B8EE;
+  }
+  .app-hub-button:hover{
+    /* background-color: rgb(169, 169, 247); */
+    background-color: rgb(216, 58, 190);
+}
+  

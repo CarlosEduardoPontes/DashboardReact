@@ -1,34 +1,60 @@
 import React from "react";
-import '../Instituicao/OverviewAluno.css'
+import '../../style/OverviewAluno.css'
 
 export default () => {
     return(
-        <aside>
+        <aside class='container'>
             <div class="grid">
-            
-            <div class="grid__item-historia">História</div>
+                <div class='grid-area-aluno'><p>Seja bem-vindo a sua Àrea do Aluno.</p>
+                     <p>Verifique se seu Professor já postou suas tarefas!</p>
+                </div>
+                
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>Português</div>
+                    <div class='grid__item__texto'>Tarefas de Português</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
 
-            <div class="grid__item-port"></div>
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>Matemática</div>
+                    <div class='grid__item__texto'>Tarefas de Matemática</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
 
-            <div class="grid__item-math">Matemática</div>
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>História</div>
+                    <div class='grid__item__texto'>Tarefas História</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
 
-            <div class="grid__item-fisica">Física</div>
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>Geografia</div>
+                    <div class='grid__item__texto'>Tarefas de Geografia</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
 
-            <div class="grid__item">
-                <h1>Biologia</h1>
-                <p>Tarefas de Física</p>
-            </div>
-            <div class="grid__item">
-                <h1>Química</h1>
-                <p>Tarefas de Química</p>
-            </div>
-            <div class="grid__item">
-                <h1>Inglês</h1>
-                <p>Tarefas de Inglês</p></div>
-            <div class="grid__item">
-                <h1>Geografia</h1>
-                <p>Tarefas de Geografia</p>
-            </div>
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>Química</div>
+                    <div class='grid__item__texto'>Tarefas de Química</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
+
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>Física</div>
+                    <div class='grid__item__texto'>Tarefas de Física</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
+
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>Biologia</div>
+                    <div class='grid__item__texto'>Tarefas de Biologia</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
+                <div class="grid__item">
+                    <div class='grid__item__titulo'>Ingês</div>
+                    <div class='grid__item__texto'>Tarefas de Inglês</div>
+                    <div class='grid__item__subtexto'><button class='app-hub-button'>Iniciar Tarefa</button></div>
+                </div>
             </div>
         </aside>  
     )
