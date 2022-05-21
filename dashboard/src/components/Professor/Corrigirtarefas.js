@@ -1,4 +1,5 @@
 import react, { useEffect, useState, useContext }from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../utils/api';
 import StoreContext from '../store/Context';
 import './../../style/CorrigirTarefas.css'
@@ -8,6 +9,8 @@ export const CorrigirTarefa = props =>{
     const { session } = useContext(StoreContext);
 
     const [tarefas, setTarefas] = useState([]);
+
+    const history = useHistory();
 
     useEffect(() =>{
         async function getTarefas(){ 
@@ -25,6 +28,10 @@ export const CorrigirTarefa = props =>{
         getTarefas();
     }, []);
 
+    const redirect = (ev) => {
+        history.push('/tarefas');
+    };
+
     return(
         <main class='container'>
             <h1>Correção</h1>
@@ -37,7 +44,7 @@ export const CorrigirTarefa = props =>{
                             <span classe='app-hub-span'>Feito em: {tarefa.dt_submissao}</span>
                             <div class='app-hub-btn'>
                                 <div>
-                                    <button class='app-hub-button'>Corrigir</button>
+                                    <button onClick={redirect} class='app-hub-button'>Corrigir</button>
                                 </div>
 
                             </div>
