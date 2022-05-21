@@ -1,0 +1,66 @@
+.container{
+    
+}
+
+.app-hub{
+    font-family: Studio-Feixen-Sans, Arial;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-weight: normal;
+    line-height: 1.5;
+    display: grid;
+    column-gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex: 1 1 0%;     
+}
+
+.app-hub-1{
+    background-color: rgb(223, 233, 232);
+    display: flex;
+    margin: 10px;
+    border-radius: 5px;
+    flex: 1 1 0%;
+    padding: 32px 16px 16px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 0.5px solid rgb(3, 0, 0);
+}
+
+.app-hub-conteudo{
+    -webkit-font-smoothing: antialiased;
+    font-family: Studio-Feixen-Sans, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    margin: 8px;
+    white-space: normal;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 1.25;
+    color: inherit;
+
+}
+
+.app-hub-btn{
+    margin: 12px;
+    padding: 12px;
+} 
+
+.app-hub-button{
+    -webkit-box-align: center;
+    align-items: center;
+    border: 2px solid rgb(5, 25, 45);
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.15s ease 0s;
+    vertical-align: baseline;
+    white-space: nowrap;
+    background-color: transparent;
+    color: rgb(5, 25, 45);
+    padding: 0px 15px;
+    display: flex;
+}
