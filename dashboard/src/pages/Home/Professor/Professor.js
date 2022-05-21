@@ -13,6 +13,7 @@ import { Turmas } from '../../Cadastro/Turma/Turmas';
 import { Exercicio } from '../../Cadastro/Professor/Exercicio';
 import { Tarefa } from '../../Cadastro/Professor/Tarefa';
 import { CorrigirTarefa } from '../../../components/Professor/Corrigirtarefas'
+import { CorrecaoTarefa } from '../../../components/Professor/CorrecaoTarefa'
 import { Mensagem } from '../../../components/Professor/Mensagens';
 
 import { ProfAluno } from '../../../components/Professor/Aluno';
@@ -33,7 +34,7 @@ export const HomeProfessor = () => {
         <Route path='/exercicios' exact component={Exercicio} />
         <Route path='/tarefas' exact component={Tarefa} />
         <Route path='/corrigirtarefas' exact component={CorrigirTarefa} />  
-
+        <Route path='/correcaotarefas' exact component={CorrecaoTarefa} /> 
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />
         <Route path='/instituicao' exact component={Instituicao} />
