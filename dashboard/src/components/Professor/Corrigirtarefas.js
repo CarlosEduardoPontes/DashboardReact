@@ -33,8 +33,8 @@ export const CorrigirTarefa = props =>{
                     <div class='app-hub-1'>
                         <div class='app-hub-conteudo'>
                             <h4>{tarefa.titulo}</h4>
-                            <span>Aluno: {tarefa.nome}</span>
-                            <span>Feito em {tarefa.dt_submissao}</span>
+                            <span classe='app-hub-span'>Aluno: {tarefa.nome}</span>
+                            <span classe='app-hub-span'>Feito em: {tarefa.dt_submissao}</span>
                             <div class='app-hub-btn'>
                                 <div>
                                     <button class='app-hub-button'>Corrigir</button>
