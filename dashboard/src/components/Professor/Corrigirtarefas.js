@@ -41,13 +41,13 @@ export const CorrigirTarefa = props =>{
                         <div class='app-hub-conteudo'>
                             <h4>{tarefa.titulo}</h4>
                             <span class='app-hub-span'>Aluno: {tarefa.nome}</span>
-                            <span class='app-hub-span'>Feito em: {tarefa.dt_submissao}</span>
-                            <div class='app-hub-btn'>
-                                <div>
-                                    <button onClick={() => redirect(tarefa.id)} class='app-hub-button'>Corrigir</button>
-                                </div>
 
-                            </div>
+                            <span class='app-hub-span'>Entregue em: {tarefa.dt_submissao}</span>
+                                <div class='app-hub-btn'>
+                                    <div>
+                                        <button onClick={redirect} class='app-hub-button'>CORRIGIR</button>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     )   
