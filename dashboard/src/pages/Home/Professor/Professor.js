@@ -34,7 +34,7 @@ export const HomeProfessor = () => {
         <Route path='/exercicios' exact component={Exercicio} />
         <Route path='/tarefas' exact component={Tarefa} />
         <Route path='/corrigirtarefas' exact component={CorrigirTarefa} />  
-        <Route path='/correcaotarefas' exact component={CorrecaoTarefa} /> 
+        <Route path='/correcaotarefas/:id' exact component={CorrecaoTarefa} /> 
         <Route path='/alunos' exact component={Alunos} />
         <Route path='/professor' exact component={Professor} />
         <Route path='/instituicao' exact component={Instituicao} />

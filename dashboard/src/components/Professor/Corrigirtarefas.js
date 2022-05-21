@@ -28,8 +28,8 @@ export const CorrigirTarefa = props =>{
         getTarefas();
     }, []);
 
-    const redirect = (ev) => {
-        history.push('/tarefas');
+    const redirect = (id) => {
+        history.push('/correcaotarefas/'+id);
     };
 
     return(
@@ -44,7 +44,7 @@ export const CorrigirTarefa = props =>{
                             <span class='app-hub-span'>Feito em: {tarefa.dt_submissao}</span>
                             <div class='app-hub-btn'>
                                 <div>
-                                    <button onClick={redirect} class='app-hub-button'>Corrigir</button>
+                                    <button onClick={() => redirect(tarefa.id)} class='app-hub-button'>Corrigir</button>
                                 </div>
 
                             </div>
