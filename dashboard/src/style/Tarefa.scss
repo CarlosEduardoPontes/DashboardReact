@@ -1,0 +1,43 @@
+.container{
+    
+}
+.div-tarefa{
+    font-family: Studio-Feixen-Sans, Arial;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-weight: normal;
+    line-height: 1.5;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 3fr;
+    flex: 1 0%; 
+}
+.div-tarefa-grid{
+    background-color: rgb(223, 233, 232);
+    box-shadow: 1px 1px 2px rgb(71, 70, 70);
+    margin-bottom: 0px;
+    margin: 20px;
+    border-radius: 5px;
+    flex: 1 0%;
+    padding: 32px 16px 16px;
+    border-radius: 10px;
+}
+
+.tarefa{
+    -webkit-font-smoothing: antialiased;
+    font-family: Studio-Feixen-Sans, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    margin: 13px;
+    white-space: normal;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 1.25;
+    color: inherit;
+}
+
+.rwd-table{
+    display: block;
+    margin: 5px;
+    width: 100%;
+}

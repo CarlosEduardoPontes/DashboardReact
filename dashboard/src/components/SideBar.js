@@ -20,12 +20,12 @@ const Nav = styled.div`
 `
 const NavIcon = styled(Link)`
     margin-left: 2rem;
-    font-size: 2rem;
+    font-size: 3rem;
     height: 80px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: #624CD3;
+    color: #f8f7fa;
     text-decoration: none;
 `
 const SideBarNav = styled.nav`
@@ -38,7 +38,7 @@ const SideBarNav = styled.nav`
     position: fixed;
     top: 0;
     left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
-    transition: 350ms;
+    transition: 250ms;
     z-index:10;
     text-decoration: none;
 `
