@@ -17,6 +17,13 @@ export const CorrigirTarefa = props =>{
 
             const t = await api('/tarefa/listar/concluidas/' + session.id, 'GET');
 
+            for (const tarefa of t) {
+                const dataSplit = tarefa.dt_submissao.split(' ');
+                const dSplit = dataSplit[0].split('-')
+                
+                tarefa.dt_submissao = dSplit[2]+'/'+dSplit[1]+'/'+dSplit[0]+' às '+dataSplit[1];
+            }
+
             setTarefas(t);
 
             console.log(session);

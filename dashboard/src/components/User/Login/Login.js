@@ -43,6 +43,10 @@ const UserLogin = () => {
   async function onSubmit(event) {
     event.preventDefault();
 
+    if(values.user == ''){
+         return;
+    }
+
     //const { token, error } = login(values); //Método sem API
     const retorno = await authenticate(values.user, values.password);
 console.log(retorno);
@@ -56,6 +60,8 @@ console.log(retorno);
     setError(error);
     setValues(initialState);
   }
+
+  console.log('macumba');
 
   return (
     <main >

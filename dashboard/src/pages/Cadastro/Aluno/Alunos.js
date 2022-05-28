@@ -80,6 +80,7 @@ export const Alunos = props =>{
                 </div>
                 
                 <div class='label-float'>
+                    <label for='data_nasc'>Data de nascimento</label>
                     <input 
                         type='date' 
                         placeholder="Data de Nascimento"
@@ -87,7 +88,7 @@ export const Alunos = props =>{
                         defaultValue={form.dataNasc}
                         name='dataNasc'
                     ></input>
-                    <label for='data_nasc'></label>
+                    
                 </div>
 
                 <div class='label-float'>

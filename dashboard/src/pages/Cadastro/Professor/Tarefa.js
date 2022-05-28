@@ -78,11 +78,19 @@ export const Tarefa = props =>{
       const addExercicio = () => {
           const id = form.idExercicio;
 
+          //Procura se o exercício já foi adicionado
+          const findSimilar = form.exercicios.find( e => e.id == id);
+
+          if(findSimilar){
+              return;
+          }
+
           const ex = exercicio.find( e => e.id == id);
 
           const f = form;
 
           ex.numerador = f.exercicios.length + 1;
+          ex.pontos = 0;
 
           console.log(ex);
 

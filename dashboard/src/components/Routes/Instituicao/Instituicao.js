@@ -5,7 +5,7 @@ import StoreContext from '../../store/Context';
 const RoutesInstituicao = ({ component: Component, ...rest}) =>{
     const { session } = useContext(StoreContext);
 
-    console.log('teste');
+    console.log(session);
     return(
         <Route
         {...rest}
