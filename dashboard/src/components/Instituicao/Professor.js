@@ -54,7 +54,7 @@ export const InstituicaoProfessor = props =>{
             "name": "identificacao",
             "label": "Identidade"
         }
-    ]
+    ];
 
     return(
         <main>
